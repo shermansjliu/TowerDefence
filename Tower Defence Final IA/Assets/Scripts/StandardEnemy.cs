@@ -13,12 +13,11 @@ public class StandardEnemy : MonoBehaviour {
 
 	void Start(){
 		currWayPoint = StoreWayPoints.wayPoints [0];
-		print (currWayPoint.position.y);
 		
 
 	}
 	void Update () {
-		Vector3 direcition = currWayPoint.position - transform.position;
+		currWayPoint = StoreWayPoints.wayPoints [wayPointIndex];
 		transform.position = Vector3.MoveTowards (transform.position, currWayPoint.position, moveSpeed * Time.deltaTime);
 
 
