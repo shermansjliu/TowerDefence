@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -994,6 +994,10 @@ Prefab:
     - target: {fileID: 429160, guid: 4b5aa1356598745b89a8dbbb0a434db7, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 147282, guid: 4b5aa1356598745b89a8dbbb0a434db7, type: 2}
+      propertyPath: m_Name
+      value: PlayerBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b5aa1356598745b89a8dbbb0a434db7, type: 2}
@@ -4308,9 +4312,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -7587,6 +7591,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498688, guid: 8a7971c9a6beb424e9a642b1fe4797d0, type: 2}
   m_PrefabInternal: {fileID: 1343700816}
+--- !u!1001 &1353862700
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 30.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488346, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478176, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1354131150
 Prefab:
   m_ObjectHideFlags: 0
@@ -8590,13 +8640,13 @@ MonoBehaviour:
   wave:
   - spawnRate: 3
     numberOfEnemies: 3
-    enemyType: {fileID: 152812, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   - spawnRate: 1
     numberOfEnemies: 5
-    enemyType: {fileID: 152812, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   - spawnRate: 1
     numberOfEnemies: 0
-    enemyType: {fileID: 152812, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   timeBetweenWaves: 3
   spawnLocation: {fileID: 434207673}
   countDownTimer: 0

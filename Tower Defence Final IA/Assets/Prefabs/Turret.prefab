@@ -112,10 +112,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112440}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0.25299996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 442724}
   - {fileID: 498434}
@@ -230,8 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotationSpeed: 0
-  bullet: {fileID: 0}
+  rotationSpeed: 6
+  bullet: {fileID: 150798, guid: aeb097fef967b42cf87b6fb61f45fe65, type: 2}
+  fireLocation: {fileID: 187002}
+  partThatRotates: {fileID: 112440}
+  range: 20
   fireRate: 0
 --- !u!1001 &100100000
 Prefab:
