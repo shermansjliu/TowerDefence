@@ -38,6 +38,7 @@ public class StandardEnemy : MonoBehaviour {
 
 	void Dead () {
 		Destroy (gameObject);
+		wayPointIndex = 0;
 	}
 
 	void atBase () {
