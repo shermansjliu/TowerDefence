@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3361370}
   - 135: {fileID: 13510620}
   - 23: {fileID: 2387176}
+  - 114: {fileID: 11463316}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MeshRenderer:
   m_GameObject: {fileID: 150798}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: 8abd37a7d9a814ec58ad14eb1ce43e5b, type: 2}
   m_SubsetIndices: 
@@ -64,6 +65,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150798}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11463316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef65505e78ea841db899c078e3cd6e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 18
+  deathEffect: {fileID: 0}
+  radius: 0
 --- !u!135 &13510620
 SphereCollider:
   m_ObjectHideFlags: 1

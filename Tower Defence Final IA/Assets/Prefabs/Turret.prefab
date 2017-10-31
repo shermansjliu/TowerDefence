@@ -230,12 +230,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotationSpeed: 6
+  rotationSpeed: 8
   bullet: {fileID: 150798, guid: aeb097fef967b42cf87b6fb61f45fe65, type: 2}
   fireLocation: {fileID: 187002}
   partThatRotates: {fileID: 112440}
-  range: 20
-  fireRate: 0
+  range: 10
+  fireRate: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

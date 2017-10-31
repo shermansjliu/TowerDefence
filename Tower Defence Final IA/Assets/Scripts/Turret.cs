@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour {
 	public GameObject partThatRotates;
 	public float range;
 	float shortestDistance; 
-	public int fireRate;
+	public float fireRate;
 	private float fireTimer;
 
 
@@ -24,9 +24,7 @@ public class Turret : MonoBehaviour {
 	void Update () {
 		if (target != null) {
 			RotateTurret ();
-			if (fireTimer <= 0) {
-				Fire ();
-			}
+
 		}
 		fireTimer -= Time.deltaTime;
 	}
@@ -43,6 +41,7 @@ public class Turret : MonoBehaviour {
 			if (distance < shortestDistance) {
 				shortestDistance = distance;
 
+
 				if (shortestDistance <= range) {
 					target = enemy.transform;
 				} else {
@@ -54,20 +53,31 @@ public class Turret : MonoBehaviour {
 	}
 
 	void RotateTurret () {
-		Vector3 directionToEnemy = (target.position - transform.position);
+		Vector3 directionToEnemy = (target.position - transform.position).normalized;
 		Quaternion targetRotation = Quaternion.LookRotation (directionToEnemy);
 		targetRotation.x = 0;
 		targetRotation.z = 0;
-		partThatRotates.transform.rotation = Quaternion.Slerp (partThatRotates.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+		partThatRotates.transform.rotation = Quaternion.Lerp (partThatRotates.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+		//Check that angle difference < 15 before firing projectile
+		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 15) {
+			if (fireTimer <= 0 ) {
+				Fire ();
+			}
+		}
 	
 
 	}
 		
 
 	void Fire () {
-		//fireTimer = 1/fireRate;
-		fireTimer = 30.0f;
-		Instantiate (bullet, fireLocation.transform.position, partThatRotates.transform.rotation);
+		
+		//Change Call script of instantiated object
+		GameObject bulletFiredGO = (GameObject) Instantiate (bullet, fireLocation.transform.position, partThatRotates.transform.rotation);
+		//Calling setTarget of BulletfiredGo script
+		Bullet bulletScript = bulletFiredGO.GetComponent<Bullet> ();
+		bulletScript.SetTarget (target);
+		fireTimer = 1.0f / fireRate;
+
 	}
 
 	void OnDrawGizmosSelected () {

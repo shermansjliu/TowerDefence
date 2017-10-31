@@ -10,6 +10,7 @@ public class waveManager : MonoBehaviour {
 		public int numberOfEnemies;
 		public GameObject enemyType;
 	}
+
 	public Wave[] wave;
 	public float timeBetweenWaves = 3.0f;
 	public GameObject spawnLocation;
