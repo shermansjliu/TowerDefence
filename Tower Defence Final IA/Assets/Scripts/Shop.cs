@@ -25,9 +25,7 @@ public class Shop : MonoBehaviour {
 	}
 
 	public	void SelectStandardTurret () {
-		if (PlayerStats.money >= standardTurret.cost) {
-			
-		}
+		currentTurret = standardTurret;
 	}
 
 	public void SelectMissileTurret () {
@@ -35,10 +33,14 @@ public class Shop : MonoBehaviour {
 	}
 
 	public void SelectLaserTurret () {
-		if (PlayerStats.money >= laserTurret.cost) {
-		}
+		currentTurret = laserTurret;
+		
 	}
 
+	public void BuyTurret (TurretSetup selectedTurret) {
+		PlayerStats.money -= selectedTurret.cost;
+		
+	}
 
 
 

@@ -8,8 +8,11 @@ public class TurretBox : MonoBehaviour {
 	private Color startColor;
 	private Vector3 buildOffSet = new Vector3 (0, 0.37f, 0);
 	public TurretSetup selectedTurret;
+
 	private Shop shop;
 	public Color hoverColor;
+
+	private GameObject tempTurret;
 
 
 	// Use this for initialization
@@ -19,8 +22,19 @@ public class TurretBox : MonoBehaviour {
 		shop = GameObject.Find ("Shop").GetComponent<Shop> ();
 	}
 
+	void Update () {
+		if (Input.GetMouseButtonDown(0))	 {
+			AlreadyATurret ();
+		}
+			
+	}
 	void OnMouseEnter () {
-		render.material.color = hoverColor;
+		if (selectedTurret == null) {
+			render.material.color = Color.red;
+		} else {
+			render.material.color = hoverColor;
+		}
+
 	}
 
 	void OnMouseExit () {
@@ -28,20 +42,33 @@ public class TurretBox : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		Debug.Log (shop);
 		selectedTurret = shop.Buy();
-		if (selectedTurret != null) {
+		if (selectedTurret != null && !AlreadyATurret()) {
 			SpawnTurret ();
+			shop.BuyTurret (selectedTurret);
+		} else {
+			print ("Already a turret");
 		}
-		//If turret already on turret box
+
 
 	}
 
 	void SpawnTurret () {
-		Debug.Log (selectedTurret);
-		Debug.Log(transform.rotation);
-		Debug.Log (selectedTurret.prefab);
 		Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
+		tempTurret = selectedTurret.prefab;
+
+	}
+
+	bool AlreadyATurret () {
+		if (tempTurret == null) {
+			return false;
+		} 
+			else {
+			Debug.Log ("Already a turret");
+		}
+
+		return true;;
+		
 	}
 		
 }
