@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class PlayerStats : MonoBehaviour {
 	int startHealth = 20;
 
 	public Text moneyText;
+	public TextMeshProUGUI moneyTextTest;
 
 	void Start () {
 		money = startMoney;
@@ -19,6 +21,6 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	void UpdateText () {
-		moneyText.text = "$" + money;
+		moneyTextTest.text = "$" + money;
 	}
 }

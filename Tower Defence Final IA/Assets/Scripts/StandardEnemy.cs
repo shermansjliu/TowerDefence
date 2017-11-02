@@ -41,6 +41,10 @@ public class StandardEnemy : MonoBehaviour {
 		}
 	}
 
+	public void TakeAreaDamage (float damage, float radius, Vector3 position){
+		TakeDamage (damage);
+	}
+
 	void Dead () {
 		Destroy (gameObject);
 		wayPointIndex = 0;

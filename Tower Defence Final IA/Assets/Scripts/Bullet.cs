@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
 		if (Vector3.Distance(transform.position,target.position)<0.2f) {
 			bulletDeath ();
+			DoDamage ();
+
 		}
 
 		RotateBullet ();
@@ -37,17 +39,44 @@ public class Bullet : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp (transform.rotation, actualRotation, 5*Time.deltaTime);
 	}
 
+
 	void bulletDeath () {
-		
-		target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
 		Destroy (gameObject);
-		Instantiate (deathEffect,target.position,Quaternion.identity);
+		GameObject deathEffectClone = (GameObject)Instantiate(deathEffect,target.position,Quaternion.identity);
+		Destroy (deathEffectClone, 0.8f);
 	}
-		
-		
 
+	void DoDamage () {
+		target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
 
-	
+		if (radius > 0) {
+			print ("hi");
+			AOEDamage (transform.position,radius);
+		}
+	}
+	int enemyCount = 0;
+	void AOEDamage (Vector3 position, float radius) {
+		//Stores all detected gameobjects with a collider component into an list because lists have explicit types
+		Collider[] EnemieswithinRange = Physics.OverlapSphere (position, radius);
+		//Detect every game object inside the array
+		foreach (Collider col in EnemieswithinRange) {
+			//If the game object has an "Enemy" Tag
+			if(col.CompareTag("Enemy")) {
+				//Declare a type StandardEnemy variable that refres to the "StandardEnemy" scripts
+				StandardEnemy enemyHit = col.GetComponent<StandardEnemy> ();
+				//call the method of standard enemy to deal damage to enemy
+				enemyHit.TakeDamage (damageAmount);
+				enemyCount++;
+			}
+		}
+		print (enemyCount);
+	}
+
+	void OnDrawGizmosSelected () {
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere (transform.position, radius);
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {

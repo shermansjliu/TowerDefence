@@ -63,9 +63,6 @@ public class TurretBox : MonoBehaviour {
 		if (tempTurret == null) {
 			return false;
 		} 
-			else {
-			Debug.Log ("Already a turret");
-		}
 
 		return true;;
 		
