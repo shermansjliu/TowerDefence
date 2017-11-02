@@ -8,6 +8,7 @@ public class StandardEnemy : MonoBehaviour {
 
 	public float health = 100;
 	public int moveSpeed = 10;
+	public GameObject deathEffect;
 
 
 
@@ -18,9 +19,13 @@ public class StandardEnemy : MonoBehaviour {
 
 	}
 
+
 	void Update () {
 		currWayPoint = StoreWayPoints.wayPoints [wayPointIndex];
 		transform.position = Vector3.MoveTowards (transform.position, currWayPoint.position, moveSpeed * Time.deltaTime);
+		if (health <= 0) {
+			
+		}
 
 
 		if(Vector3.Distance(transform.position, currWayPoint.position)<=0.2){
@@ -29,7 +34,7 @@ public class StandardEnemy : MonoBehaviour {
 
 	}
 		
-	void TakeDamage (float damage) {
+	public void TakeDamage (float damage) {
 		health -= damage;
 		if (health <= 0) {
 			Dead ();

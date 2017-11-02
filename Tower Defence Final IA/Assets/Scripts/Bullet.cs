@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 	public int speed;
 	public GameObject deathEffect;
 	public int radius;
+	public float damageAmount;
 
 
 	Transform target;
@@ -37,16 +38,16 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void bulletDeath () {
+		
+		target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
 		Destroy (gameObject);
 		Instantiate (deathEffect,target.position,Quaternion.identity);
-		
 	}
+		
+		
 
-	void Damage (int damage){
-		// if radius > 0 do damage in radius
-		//Do damage 
-		
-	}
+
+	
 	
 	// Update is called once per frame
 	void Update () {
