@@ -9340,7 +9340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
   - spawnRate: 1
-    numberOfEnemies: 3
+    numberOfEnemies: 5
     enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   - spawnRate: 1
     numberOfEnemies: 5

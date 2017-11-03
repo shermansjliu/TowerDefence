@@ -5,6 +5,7 @@ public class StandardEnemy : MonoBehaviour {
 
 	private int wayPointIndex = 0;
 	private Transform currWayPoint;
+	private float maxHealth;
 
 	public float health = 100;
 	public int moveSpeed = 10;
@@ -18,6 +19,7 @@ public class StandardEnemy : MonoBehaviour {
 	void Start () {
 		currWayPoint = StoreWayPoints.wayPoints [0];
 		InvokeRepeating ("atBase",0f,0.1f);
+		maxHealth = health;
 	}
 
 
@@ -33,8 +35,8 @@ public class StandardEnemy : MonoBehaviour {
 		
 	public void TakeDamage (float damage) {
 		health -= damage;
-		//float healthBarScale = health / 100;
-		healthBar.transform.localScale -= new Vector3(damage/100, 0, 0);
+		print (1*health/maxHealth);
+		healthBar.transform.localScale -= new Vector3(damage/maxHealth, 0, 0);
 		if (health <= 0) {
 			Dead ();
 			PlayerStats.money += moneyGained;
