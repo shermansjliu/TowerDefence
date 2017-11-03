@@ -13,12 +13,15 @@ public class MusicPlayer : MonoBehaviour {
 	private int sceneIndex;
 
 	void Awake () {
+		//If an Mpinstance doesn't exist
 		if (mpInstance == null) {
+			//set mpInstance to be the "MusicPlayer" component of this gameobject
 			mpInstance = this;
-
+			//Don't destory this gameobject duirng level changes
 			DontDestroyOnLoad (this);
 		} 
 		else {
+			//if any other instance is made destroy it.
 			Destroy (gameObject);
 			return;
 		}

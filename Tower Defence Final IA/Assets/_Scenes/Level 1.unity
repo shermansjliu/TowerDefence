@@ -1220,7 +1220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429160, guid: 4b5aa1356598745b89a8dbbb0a434db7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 147282, guid: 4b5aa1356598745b89a8dbbb0a434db7, type: 2}
       propertyPath: m_Name
@@ -4841,10 +4841,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0
+  m_PlayOnAwake: 0
+  m_Volume: 0.562
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -5746,7 +5746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428188, guid: 4a29bfa55842a4184b5177531b4c9a39, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a29bfa55842a4184b5177531b4c9a39, type: 2}
@@ -9339,14 +9339,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave:
-  - spawnRate: 1.5
+  - spawnRate: 1
     numberOfEnemies: 3
     enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   - spawnRate: 1
     numberOfEnemies: 5
     enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   - spawnRate: 1
-    numberOfEnemies: 0
+    numberOfEnemies: 3
     enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
   timeBetweenWaves: 3
   spawnLocation: {fileID: 434207673}
@@ -9564,7 +9564,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1538068890}
   m_LocalRotation: {x: -0.043573096, y: -0.31889665, z: 0.04467483, w: 0.9457328}
-  m_LocalPosition: {x: 0, y: 0, z: 9.9}
+  m_LocalPosition: {x: 0, y: 0, z: 10.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -3.0911, y: -37.4421, z: 6.4568996}
   m_Children:
@@ -9573,7 +9573,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.2, y: 43.8}
+  m_AnchoredPosition: {x: 16.9, y: 51.7}
   m_SizeDelta: {x: 75.2, y: 28.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538068892

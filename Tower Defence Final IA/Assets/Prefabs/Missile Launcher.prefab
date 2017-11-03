@@ -233,8 +233,8 @@ MonoBehaviour:
   bullet: {fileID: 115000, guid: 0f0bff813390b4c08bef18010f3c4962, type: 2}
   fireLocation: {fileID: 137136}
   partThatRotates: {fileID: 133360}
-  range: 15
-  fireRate: 0.3
+  range: 30
+  fireRate: 0.2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
