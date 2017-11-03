@@ -234,7 +234,7 @@ MonoBehaviour:
   fireLocation: {fileID: 137136}
   partThatRotates: {fileID: 133360}
   range: 15
-  fireRate: 0.5
+  fireRate: 0.3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

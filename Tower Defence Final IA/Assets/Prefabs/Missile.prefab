@@ -106,8 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   deathEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
-  radius: 8
-  damageAmount: 100
+  radius: 10
+  damageAmount: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

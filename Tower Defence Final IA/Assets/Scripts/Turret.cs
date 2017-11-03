@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour {
 	public float range;
 	float shortestDistance; 
 	public float fireRate;
-	private float fireTimer;
+	private float fireTimer = 0;
 
 
 
@@ -59,7 +59,7 @@ public class Turret : MonoBehaviour {
 		targetRotation.z = 0;
 		partThatRotates.transform.rotation = Quaternion.Lerp (partThatRotates.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 		//Check that angle difference < 15 before firing projectile
-		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 15) {
+		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 20) {
 			if (fireTimer <= 0 ) {
 				Fire ();
 			}
@@ -70,7 +70,6 @@ public class Turret : MonoBehaviour {
 		
 
 	void Fire () {
-		
 		//Change Call script of instantiated object
 		GameObject bulletFiredGO = (GameObject) Instantiate (bullet, fireLocation.transform.position, partThatRotates.transform.rotation);
 		//Calling setTarget of BulletfiredGo script

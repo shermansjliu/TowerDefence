@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour {
 	public float damageAmount;
 
 
+
+
 	Transform target;
 	// Use this for initialization
 	public void SetTarget (Transform targetT) {
@@ -47,11 +49,12 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void DoDamage () {
-		target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
+
 
 		if (radius > 0) {
-			print ("hi");
-			AOEDamage (transform.position,radius);
+			AOEDamage (transform.position, radius);
+		} else {
+			target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
 		}
 	}
 	int enemyCount = 0;
@@ -69,7 +72,6 @@ public class Bullet : MonoBehaviour {
 				enemyCount++;
 			}
 		}
-		print (enemyCount);
 	}
 
 	void OnDrawGizmosSelected () {

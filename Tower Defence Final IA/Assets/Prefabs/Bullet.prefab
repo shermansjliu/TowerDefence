@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 18
-  deathEffect: {fileID: 144520, guid: a4b91e6625a79477fab9ddf405efb9f9, type: 2}
+  deathEffect: {fileID: 144520, guid: 93a8c05dca85f4053b9643d8f497b619, type: 2}
   radius: 0
-  damageAmount: 100
+  damageAmount: 30
 --- !u!135 &13510620
 SphereCollider:
   m_ObjectHideFlags: 1

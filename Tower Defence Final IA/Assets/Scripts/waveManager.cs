@@ -6,7 +6,7 @@ public class waveManager : MonoBehaviour {
 
 	[System.Serializable]
 	public class Wave{
-		public int spawnRate;
+		public float spawnRate;
 		public int numberOfEnemies;
 		public GameObject enemyType;
 	}

@@ -8,11 +8,11 @@ public class PlayerStats : MonoBehaviour {
 	public static int money ;
 	public static int health ;
 
-	int startMoney = 100;
-	int startHealth = 20;
+	public int startMoney;
+	public int startHealth;
 
-	public Text moneyText;
-	public TextMeshProUGUI moneyTextTest;
+	public TextMeshProUGUI moneyText;
+	public TextMeshProUGUI healthText;
 
 	void Start () {
 		money = startMoney;
@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	void UpdateText () {
-		moneyTextTest.text = "$" + money;
+		moneyText.text = "$" + money;
+		healthText.text = "Lives " + health;
 	}
 }

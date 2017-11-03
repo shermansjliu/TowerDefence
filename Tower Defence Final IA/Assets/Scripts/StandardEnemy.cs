@@ -9,24 +9,21 @@ public class StandardEnemy : MonoBehaviour {
 	public float health = 100;
 	public int moveSpeed = 10;
 	public GameObject deathEffect;
+	public GameObject healthBar;
+	public int moneyGained;
+	public int damageToBase;
 
 
 
 	void Start () {
 		currWayPoint = StoreWayPoints.wayPoints [0];
 		InvokeRepeating ("atBase",0f,0.1f);
-		
-
 	}
 
 
 	void Update () {
 		currWayPoint = StoreWayPoints.wayPoints [wayPointIndex];
 		transform.position = Vector3.MoveTowards (transform.position, currWayPoint.position, moveSpeed * Time.deltaTime);
-		if (health <= 0) {
-			
-		}
-
 
 		if(Vector3.Distance(transform.position, currWayPoint.position)<=0.2){
 			getNextWayPoint();
@@ -36,8 +33,12 @@ public class StandardEnemy : MonoBehaviour {
 		
 	public void TakeDamage (float damage) {
 		health -= damage;
+		//float healthBarScale = health / 100;
+		healthBar.transform.localScale -= new Vector3(damage/100, 0, 0);
 		if (health <= 0) {
 			Dead ();
+			PlayerStats.money += moneyGained;
+
 		}
 	}
 
@@ -47,12 +48,13 @@ public class StandardEnemy : MonoBehaviour {
 
 	void Dead () {
 		Destroy (gameObject);
-		wayPointIndex = 0;
+		Instantiate (deathEffect, transform.position, Quaternion.identity); 
 	}
 
 	void atBase () {
 		if (wayPointIndex >= StoreWayPoints.wayPoints.Length) {
 			Dead ();
+			PlayerStats.health -= damageToBase;
 		}	
 	}
 
