@@ -6,7 +6,7 @@ public class ScreenManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution (1280, 720, false);
+		Screen.SetResolution (1280, 800, true);
 	
 	}
 	
