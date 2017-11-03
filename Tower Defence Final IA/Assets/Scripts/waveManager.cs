@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class waveManager : MonoBehaviour {
 
@@ -9,10 +10,13 @@ public class waveManager : MonoBehaviour {
 		public float spawnRate;
 		public int numberOfEnemies;
 		public GameObject enemyType;
+		public float timeBetweenWaves;
 	}
 
+	public TextMeshProUGUI countDownText;
+
 	public Wave[] wave;
-	public float timeBetweenWaves = 3.0f;
+
 	public GameObject spawnLocation;
 	public float countDownTimer;
 
@@ -25,16 +29,17 @@ public class waveManager : MonoBehaviour {
 	void Start () {
 		currentWave = 0;
 		state = waveState.Coundown;
-		countDownTimer = timeBetweenWaves;
+		countDownTimer = wave[currentWave].timeBetweenWaves;
 
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		countDownText.text = countDownTimer.ToString ("F2");
 		if (countDownTimer <= 0) {
 			//Reset countdown timer
-			countDownTimer = timeBetweenWaves;
+			countDownTimer = wave[currentWave].timeBetweenWaves;
 			StartCoroutine(StartNextWave());
 		} 
 
