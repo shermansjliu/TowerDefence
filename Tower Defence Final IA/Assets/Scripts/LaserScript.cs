@@ -10,7 +10,6 @@ public class LaserScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		laser = GetComponent<LineRenderer> ();
-		laser.SetWidth (2f, 2f);
 
 	
 	}
@@ -18,7 +17,7 @@ public class LaserScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		laser.SetPosition (0,startPoint.position);
-		laser.SetPosition (5, endPoint.position);
+		laser.SetPosition (1, endPoint.position);
 
 	}
 }

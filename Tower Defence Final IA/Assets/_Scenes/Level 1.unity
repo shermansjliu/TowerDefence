@@ -9570,7 +9570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154891085cf5c4269b2e75601bc55d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBuildTime: 30
+  initialBuildTime: 3
   countDownText: {fileID: 691510743}
   wave:
   - spawnRate: 1
@@ -9579,7 +9579,7 @@ MonoBehaviour:
     timeBetweenNextWave: 3
   - spawnRate: 1
     numberOfEnemies: 5
-    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    enemyType: {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
     timeBetweenNextWave: 3
   - spawnRate: 1
     numberOfEnemies: 5
@@ -10465,8 +10465,8 @@ MonoBehaviour:
     prefab: {fileID: 127444, guid: ed990a555a476422cb97d9b68ae7524a, type: 2}
     cost: 200
   laserTurret:
-    prefab: {fileID: 0}
-    cost: 140
+    prefab: {fileID: 194216, guid: fab89b31923274dc1ad266bf5042c9ff, type: 2}
+    cost: 220
   currentTurret:
     prefab: {fileID: 0}
     cost: 0
@@ -13289,7 +13289,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027059684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1601665467}
+        m_MethodName: SelectLaserTurret
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2027059684

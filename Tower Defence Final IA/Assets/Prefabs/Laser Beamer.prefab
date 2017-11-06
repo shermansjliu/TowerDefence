@@ -43,7 +43,7 @@ GameObject:
   - 33: {fileID: 3383980}
   - 23: {fileID: 2305486}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: TurretHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435334}
-  - 114: {fileID: 11433400}
   - 120: {fileID: 12046518}
-  - 114: {fileID: 11430250}
+  - 114: {fileID: 11479460}
   m_Layer: 0
   m_Name: Laser Beamer
   m_TagString: Untagged
@@ -88,26 +87,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184306}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0.8, z: -3.21}
+  m_LocalRotation: {x: 0, y: -0.00000035762787, z: 0, w: -1}
+  m_LocalPosition: {x: 0, y: 0.7999997, z: 3.2099988}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 429938}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &429938
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115050}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 2.88, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 2.8800004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
-  - {fileID: 444412}
   - {fileID: 420036}
+  - {fileID: 444412}
   m_Father: {fileID: 435334}
   m_RootOrder: 1
 --- !u!4 &435334
@@ -116,10 +115,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37, y: 1.26, z: -6.14}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 40, y: 1.26, z: -28.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children:
   - {fileID: 476084}
   - {fileID: 429938}
@@ -131,13 +130,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154738}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5000001, w: 0.49999994}
-  m_LocalPosition: {x: 0, y: -0.08509326, z: 0}
-  m_LocalScale: {x: 100.000015, y: 100.000015, z: 100}
-  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+  m_LocalRotation: {x: -0.50000006, y: 0.50000006, z: 0.5000001, w: 0.4999999}
+  m_LocalPosition: {x: 0, y: -0.0850935, z: 0}
+  m_LocalScale: {x: 100, y: 100.000015, z: 100}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 429938}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &476084
 Transform:
   m_ObjectHideFlags: 1
@@ -220,7 +219,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154738}
   m_Mesh: {fileID: 4300002, guid: 96c1e54a291d647309c70f7d27ca5e45, type: 3}
---- !u!114 &11430250
+--- !u!114 &11479460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -228,29 +227,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 194216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9a1e9505ca3547da89d7e8a449433c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {fileID: 420036}
-  endPoint: {fileID: 0}
---- !u!114 &11433400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b47ab9afdf4460daf207c76d104a0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e4bd3dc2f9cb42a7977c57eed23f8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotationSpeed: 5
-  bullet: {fileID: 0}
-  fireLocation: {fileID: 0}
-  partThatRotates: {fileID: 0}
-  range: 0
-  fireRate: 0
+  fireLocation: {fileID: 184306}
+  partThatRotates: {fileID: 115050}
+  range: 20
+  rotationSpeed: 10
+  rotationUntilFire: 30
+  damage: 20
+  damageMultiplier: 1.05
 --- !u!120 &12046518
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -279,10 +266,10 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: 0.2
+    endWidth: 0.2
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
