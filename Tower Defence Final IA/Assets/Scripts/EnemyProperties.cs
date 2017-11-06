@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StandardEnemy : MonoBehaviour {
+public class EnemyProperties : MonoBehaviour {
 
 	private int wayPointIndex = 0;
 	private Transform currWayPoint;
@@ -35,7 +35,6 @@ public class StandardEnemy : MonoBehaviour {
 		
 	public void TakeDamage (float damage) {
 		health -= damage;
-		print (1*health/maxHealth);
 		healthBar.transform.localScale -= new Vector3(damage/maxHealth, 0, 0);
 		if (health <= 0) {
 			Dead ();

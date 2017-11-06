@@ -23,15 +23,16 @@ public class TurretBox : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButtonDown(0))	 {
-			AlreadyATurret ();
-		}
+
 			
 	}
 	void OnMouseEnter () {
-		if (selectedTurret == null) {
+		if (shop.currentTurret.prefab == null) {
+			return;
+		}else if(PlayerStats.money < shop.currentTurret.cost){
 			render.material.color = Color.red;
-		} else {
+		}
+		else {
 			render.material.color = hoverColor;
 		}
 
@@ -46,7 +47,8 @@ public class TurretBox : MonoBehaviour {
 		if (selectedTurret != null && !AlreadyATurret()) {
 			SpawnTurret ();
 			shop.BuyTurret (selectedTurret);
-		} else {
+		} 
+		else {
 			print ("Already a turret");
 		}
 

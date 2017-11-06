@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour {
 		if (radius > 0) {
 			AOEDamage (transform.position, radius);
 		} else {
-			target.GetComponent<StandardEnemy> ().TakeDamage (damageAmount);
+			target.GetComponent<EnemyProperties> ().TakeDamage (damageAmount);
 		}
 	}
 	int enemyCount = 0;
@@ -65,8 +65,8 @@ public class Bullet : MonoBehaviour {
 		foreach (Collider col in EnemieswithinRange) {
 			//If the game object has an "Enemy" Tag
 			if(col.CompareTag("Enemy")) {
-				//Declare a type StandardEnemy variable that refres to the "StandardEnemy" scripts
-				StandardEnemy enemyHit = col.GetComponent<StandardEnemy> ();
+				//Declare a type EnemyProperties variable that refres to the "EnemyProperties" scripts
+				EnemyProperties enemyHit = col.GetComponent<EnemyProperties> ();
 				//call the method of standard enemy to deal damage to enemy
 				enemyHit.TakeDamage (damageAmount);
 				enemyCount++;

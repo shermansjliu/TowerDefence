@@ -10,8 +10,12 @@ public class waveManager : MonoBehaviour {
 		public float spawnRate;
 		public int numberOfEnemies;
 		public GameObject enemyType;
-		public float timeBetweenWaves;
+		public float timeBetweenNextWave;
 	}
+
+	public int initialBuildTime;
+
+	
 
 	public TextMeshProUGUI countDownText;
 
@@ -29,17 +33,18 @@ public class waveManager : MonoBehaviour {
 	void Start () {
 		currentWave = 0;
 		state = waveState.Coundown;
-		countDownTimer = wave[currentWave].timeBetweenWaves;
+		countDownTimer = initialBuildTime;
 
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Display countdown timer up to two decimal places
 		countDownText.text = countDownTimer.ToString ("F2");
 		if (countDownTimer <= 0) {
 			//Reset countdown timer
-			countDownTimer = wave[currentWave].timeBetweenWaves;
+			countDownTimer = wave[currentWave].timeBetweenNextWave;
 			StartCoroutine(StartNextWave());
 		} 
 
