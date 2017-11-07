@@ -4,11 +4,9 @@ using System.Collections;
 public class TurretBox : MonoBehaviour {
 
 	private Renderer render;
-	private bool mouseHover = false;
 	private Color startColor;
 	private Vector3 buildOffSet = new Vector3 (0, 0.37f, 0);
 	public TurretSetup selectedTurret;
-
 	private Shop shop;
 	public Color hoverColor;
 
@@ -26,6 +24,7 @@ public class TurretBox : MonoBehaviour {
 
 			
 	}
+
 	void OnMouseEnter () {
 		if (shop.currentTurret.prefab == null) {
 			return;
@@ -35,7 +34,14 @@ public class TurretBox : MonoBehaviour {
 		else {
 			render.material.color = hoverColor;
 		}
+		//Instantate upgrade UI game object at current position + offset
 
+	}
+
+	void Upgrade () {
+	}
+
+	void Sell() {
 	}
 
 	void OnMouseExit () {

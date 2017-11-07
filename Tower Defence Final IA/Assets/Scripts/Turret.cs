@@ -20,6 +20,8 @@ public class Turret : MonoBehaviour {
 	float shortestDistance; 
 	//Stores fireRate
 	public float fireRate;
+
+
 	private float fireTimer = 0;
 
 

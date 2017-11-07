@@ -12,18 +12,16 @@ public class waveManager : MonoBehaviour {
 		public GameObject enemyType;
 		public float timeBetweenNextWave;
 	}
-
 	public int initialBuildTime;
-
-	
+	public GameObject spawnLocation;
+	public float countDownTimer;
 
 	public TextMeshProUGUI countDownText;
 
 	public Wave[] wave;
 
-	public GameObject spawnLocation;
-	public float countDownTimer;
 
+	private LevelManager levelManager;
 	private int currentWave;
 	private enum waveState {Spawning, Waiting, Coundown}
 	private  waveState state;
@@ -31,6 +29,7 @@ public class waveManager : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+		levelManager = GetComponent<LevelManager> ();
 		currentWave = 0;
 		state = waveState.Coundown;
 		countDownTimer = initialBuildTime;
@@ -40,6 +39,9 @@ public class waveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (currentWave >= wave.Length - 1) {
+			levelManager.LoadLevel ("NextLevel");
+		}
 		//Display countdown timer up to two decimal places
 		countDownText.text = countDownTimer.ToString ("F2");
 		if (countDownTimer <= 0) {

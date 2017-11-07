@@ -161,7 +161,7 @@ MonoBehaviour:
   moveSpeed: 8
   deathEffect: {fileID: 127858, guid: c00603ce9d7244b85aa1b81a27432bd1, type: 2}
   healthBar: {fileID: 134724}
-  moneyGained: 0
+  moneyGained: 50
   damageToBase: 0
 --- !u!114 &11431324
 MonoBehaviour:

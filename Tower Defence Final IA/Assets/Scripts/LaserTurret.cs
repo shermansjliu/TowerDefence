@@ -120,7 +120,7 @@ public class LaserTurret : MonoBehaviour {
 		damage *= damageMultiplier;
 
 		print (target.Equals (target));
-		if (target.GetInstanceID() != previousTargetID || target == null) {
+		if (target.GetInstanceID() != previousTargetID) {
 			damage = startDamage;
 			previousTargetID = target.GetInstanceID();
 		}
