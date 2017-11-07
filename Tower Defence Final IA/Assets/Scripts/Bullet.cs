@@ -16,10 +16,7 @@ public class Bullet : MonoBehaviour {
 	public void SetTarget (Transform targetT) {
 		target = targetT;
 	}
-
-	public Transform GetTarget () { 
-		return target;
-	}
+		
 
 	void FollowTarget () {
 		transform.position = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
@@ -28,8 +25,10 @@ public class Bullet : MonoBehaviour {
 			DoDamage ();
 
 		}
-
 		RotateBullet ();
+		if (target == null) {
+			Destroy (gameObject);
+		}
 	}
 
 	void RotateBullet () {
