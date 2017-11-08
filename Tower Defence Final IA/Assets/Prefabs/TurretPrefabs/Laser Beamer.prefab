@@ -237,6 +237,7 @@ MonoBehaviour:
   rotationSpeed: 10
   rotationUntilFire: 30
   damage: 20
+  sellAmount: 260
   damageMultiplier: 1.05
 --- !u!120 &12046518
 LineRenderer:

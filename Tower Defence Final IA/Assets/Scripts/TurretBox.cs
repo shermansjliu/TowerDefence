@@ -9,8 +9,7 @@ public class TurretBox : MonoBehaviour {
 	public TurretSetup selectedTurret;
 	private Shop shop;
 	public Color hoverColor;
-
-	private GameObject tempTurret;
+	public GameObject selectedTurretClone; 
 
 
 	// Use this for initialization
@@ -19,11 +18,7 @@ public class TurretBox : MonoBehaviour {
 		startColor = render.material.color;
 		shop = GameObject.Find ("Shop").GetComponent<Shop> ();
 	}
-
-	void Update () {
-
-			
-	}
+		
 
 	void OnMouseEnter () {
 		if (shop.currentTurret.prefab == null) {
@@ -38,11 +33,7 @@ public class TurretBox : MonoBehaviour {
 
 	}
 
-	void Upgrade () {
-	}
 
-	void Sell() {
-	}
 
 	void OnMouseExit () {
 		render.material.color = startColor;
@@ -52,28 +43,44 @@ public class TurretBox : MonoBehaviour {
 		selectedTurret = shop.Buy();
 		if (selectedTurret != null && !AlreadyATurret()) {
 			SpawnTurret ();
-			shop.BuyTurret (selectedTurret);
+			shop.SpendMoney (selectedTurret);
+
 		} 
 		else {
 			print ("Already a turret");
 		}
-
+		shop.currentTurret = null;
 
 	}
 
 	void SpawnTurret () {
-		Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
-		tempTurret = selectedTurret.prefab;
+		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
 
 	}
 
 	bool AlreadyATurret () {
-		if (tempTurret == null) {
+		if (selectedTurretClone == null) {
 			return false;
 		} 
-
-		return true;;
+	
+		return true;
 		
 	}
+
+	public void UpgradeCurrentTurret (Upgrades[] _upgrades){
+		print ("upgrade Button Clicked");
+		Instantiate (_upgrades [0].prefab,transform.position+ buildOffSet,transform.rotation);
+		Destroy (selectedTurretClone);
+	
+	}
+		
+	public void SellCurrentTurret() {
+		PlayerStats.money += selectedTurret.sellAmount;
+		Destroy (selectedTurretClone);
+		selectedTurret = null;
+
+
+	}
+
 		
 }

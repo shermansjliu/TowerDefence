@@ -11,7 +11,9 @@ public class Shop : MonoBehaviour {
 
 	// Use this for initialization
 
-		
+
+	void Start(){
+	}
 
 	
 	// Update is called once per frame
@@ -37,10 +39,13 @@ public class Shop : MonoBehaviour {
 		
 	}
 
-	public void BuyTurret (TurretSetup selectedTurret) {
+	public void SpendMoney (TurretSetup selectedTurret){
 		PlayerStats.money -= selectedTurret.cost;
 		
 	}
+
+
+
 
 
 

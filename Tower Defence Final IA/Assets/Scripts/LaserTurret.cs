@@ -19,6 +19,8 @@ public class LaserTurret : MonoBehaviour {
 	public float damage;
 
 
+
+
 	float shortestDistance; 
 
 	//Stores fireRate

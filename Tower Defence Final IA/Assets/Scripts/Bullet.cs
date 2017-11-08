@@ -26,9 +26,7 @@ public class Bullet : MonoBehaviour {
 
 		}
 		RotateBullet ();
-		if (target == null) {
-			Destroy (gameObject);
-		}
+
 	}
 
 	void RotateBullet () {
@@ -48,8 +46,6 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void DoDamage () {
-
-
 		if (radius > 0) {
 			AOEDamage (transform.position, radius);
 		} else {
@@ -73,6 +69,7 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
+
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.green;
 		Gizmos.DrawWireSphere (transform.position, radius);
@@ -84,7 +81,10 @@ public class Bullet : MonoBehaviour {
 		if (target != null) {
 			FollowTarget ();
 		}
-
+		//Destroy game object if the target is no longer there (so that there are no bullets that are left mid air with no target)
+		if (target == null) {
+			Destroy (gameObject);
+		}
 
 	
 	}
