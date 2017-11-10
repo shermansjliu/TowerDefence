@@ -2,28 +2,27 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 public class UpgradeShop : MonoBehaviour {
-	private float upgradeVersion;
-	[Header("Standard Upgrades")]
-	public Upgrades[] upgradeSTurr;
-	[Header("Missile Upgrades")]
-	public Upgrades[] upgradeMTurr;
-	[Header("Laser Upgrades")]
-	public Upgrades[] upgradeLTurr;
 
-	public GameObject turretOnNode;
+
+
+	[Header("Standard Upgrades")]
+	public TurretSetup[] upgradeSTurr;
+	[Header("Missile Upgrades")]
+	public TurretSetup[] upgradeMTurr;
+	[Header("Laser Upgrades")]
+	public TurretSetup[] upgradeLTurr;
+
 	bool isUISelected;
 	TurretBox turretBox;
 
-	Shop shop;
+
 	// Use this for initialization
 
 
 	void Start () {
-		shop = GameObject.Find ("Shop").GetComponent<Shop> ();
 		turretBox = GetComponentInParent<TurretBox> ();
-		Upgrades[] upgradeSturr = new Upgrades[1];
-		Upgrades[] upgradeMTurr = new Upgrades[1];
-		Upgrades[] upgradeLTurr = new Upgrades[1];
+
+
 	}
 
 	// Update is called once per frame
@@ -32,7 +31,11 @@ public class UpgradeShop : MonoBehaviour {
 	}
 
 	public void findTurretType () {
+		//print (upgradeSTurr [0]);
 		if (turretBox.selectedTurret.prefab.name.Contains("Standard")){
+			//if (upgradeSTurr [0].cost <= PlayerStats.money) {
+			//}
+
 			turretBox.UpgradeCurrentTurret (upgradeSTurr);
 		}
 			

@@ -23,7 +23,6 @@ public class Turret : MonoBehaviour {
 	public int sellAmount;
 
 
-
 	private float fireTimer = 0;
 
 

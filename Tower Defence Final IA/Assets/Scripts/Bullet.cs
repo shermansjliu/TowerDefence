@@ -8,8 +8,12 @@ public class Bullet : MonoBehaviour {
 	public int radius;
 	public float damageAmount;
 
+	private ParticleSystem trail;
 
 
+	void Start () {
+		trail = GetComponent<ParticleSystem> ();
+	}
 
 	Transform target;
 	// Use this for initialization
@@ -19,6 +23,7 @@ public class Bullet : MonoBehaviour {
 		
 
 	void FollowTarget () {
+		trail.Play ();
 		transform.position = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
 		if (Vector3.Distance(transform.position,target.position)<0.5f || target == null) {
 			bulletDeath ();
@@ -84,6 +89,7 @@ public class Bullet : MonoBehaviour {
 		//Destroy game object if the target is no longer there (so that there are no bullets that are left mid air with no target)
 		if (target == null) {
 			Destroy (gameObject);
+
 		}
 
 	
