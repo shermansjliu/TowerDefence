@@ -1,38 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class TurretBox : MonoBehaviour {
 
 	private Renderer render;
 	private Color startColor;
 	private Vector3 buildOffSet = new Vector3 (0, 0.37f, 0);
-	private int upgradeVersion;
+
 	private Shop shop;
 
-
+	//public int upgradePrice;
+	public int upgradeVersion;
 	public TurretSetup selectedTurret;
 	public Color hoverColor;
 	public GameObject selectedTurretClone; 
-	public GameObject upgradeShop;
+	public GameObject upgradeShopUI;
 
 
 
 
 	// Use this for initialization
 	void Start () {
-		upgradeShop.SetActive (false);
+		
 		upgradeVersion = 0;
 		render = GetComponent<Renderer> ();
 		startColor = render.material.color;
 		shop = GameObject.Find ("Shop").GetComponent<Shop> ();
+
 	}
 
 	void Update () {
 		//If esc key is hit delte upgrade ui
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			upgradeShop.SetActive (false);
+			upgradeShopUI.SetActive (false);
 		}
+
+			
 	}
+
+
 		
 
 	void OnMouseEnter () {
@@ -64,12 +71,16 @@ public class TurretBox : MonoBehaviour {
 			shop.SpendMoney (selectedTurret);
 			//Deselect Turret;
 			shop.currentTurret = null;
+
 		} 
 		else if(selectedTurret.prefab!=null){
 			//When there is a turret already on the node and it is clicked on, spawn a the upgrade shop UI
-			if (upgradeShop.activeInHierarchy == false) {
+			if (upgradeShopUI.activeInHierarchy == false) {
+
+	
+			//	upgradePriceText.text = "UPGRADE\n" + upgradePrice;
 				print("Spawn UI");
-				upgradeShop.SetActive (true);
+				upgradeShopUI.SetActive (true);
 			}
 			//If the ID of another turret is not different don't do anyhing
 		
@@ -81,7 +92,7 @@ public class TurretBox : MonoBehaviour {
 	}
 
 	void SpawnTurret () {
-		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
+		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, Quaternion.identity);
 
 	}
 
@@ -100,7 +111,7 @@ public class TurretBox : MonoBehaviour {
 			//Destroy instance of previous turret
 			Destroy (selectedTurretClone);
 			//Make the current turret of this Node set to upgraded turret
-			selectedTurret = upgradedTurret [0];
+			selectedTurret = upgradedTurret [upgradeVersion];
 			//Spawn the new upgraded Turret;
 			SpawnTurret ();
 			upgradeVersion++;
@@ -116,7 +127,7 @@ public class TurretBox : MonoBehaviour {
 		PlayerStats.money += selectedTurret.sellAmount;
 		Destroy (selectedTurretClone);
 		selectedTurret = null;
-		upgradeShop.SetActive (false);
+		upgradeShopUI.SetActive (false);
 
 
 	}

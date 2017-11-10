@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using TMPro;
 public class UpgradeShop : MonoBehaviour {
 
 
+
+	public TextMeshProUGUI upgradePriceText;
+	public TextMeshProUGUI sellMoneyText;
 
 	[Header("Standard Upgrades")]
 	public TurretSetup[] upgradeSTurr;
@@ -21,20 +25,20 @@ public class UpgradeShop : MonoBehaviour {
 
 	void Start () {
 		turretBox = GetComponentInParent<TurretBox> ();
-
-
 	}
 
 	// Update is called once per frame
 	void Update () {
-	
+		upgradePriceText.text = "UPGRADE\n" + SetPrice ();
+		sellMoneyText.text = "SELL\n" + SetSellPrice ();
 	}
 
-	public void findTurretType () {
-		//print (upgradeSTurr [0]);
-		if (turretBox.selectedTurret.prefab.name.Contains("Standard")){
-			//if (upgradeSTurr [0].cost <= PlayerStats.money) {
-			//}
+
+	public void Upgrade () {
+		
+		if (GetTurretType().Contains("Standard")){
+			if (upgradeSTurr [turretBox.upgradeVersion].cost <= PlayerStats.money) {
+			}
 
 			turretBox.UpgradeCurrentTurret (upgradeSTurr);
 		}
@@ -44,6 +48,40 @@ public class UpgradeShop : MonoBehaviour {
 	public void SellTurret () {
 		turretBox.SellCurrentTurret ();
 	}
+
+	public int SetPrice (){
+		if(turretBox.selectedTurret != null){
+			//Set the upgrade price on the correct upgrade path
+			if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion].cost;}
+			if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion].cost;
+			if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion].cost;
+
+		}
+
+		return 0;
+
+	}
+
+	public int SetSellPrice (){
+		if(turretBox.selectedTurret != null){
+			if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion].sellAmount;}
+			if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion].sellAmount;
+			if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion].sellAmount;
+
+		}
+
+		return 0;
+
+	}
+
+
+
+	public string GetTurretType () {
+		return turretBox.selectedTurret.prefab.name;
+
+	}
+
+
 
 
 
