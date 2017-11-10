@@ -7,11 +7,17 @@ public class EnemyProperties : MonoBehaviour {
 	private Transform currWayPoint;
 	private float maxHealth;
 
-	public float health = 100;
-	public int moveSpeed = 10;
+	[Header ("UI")]
+	public int scoreAmount;
+	public int moneyGained;
+
+	[Header("Effects")]
 	public GameObject deathEffect;
 	public GameObject healthBar;
-	public int moneyGained;
+
+	[Header("Stats")]
+	public float health = 100;
+	public int moveSpeed = 10;
 	public int damageToBase;
 
 
@@ -50,6 +56,7 @@ public class EnemyProperties : MonoBehaviour {
 	void Dead () {
 		Destroy (gameObject);
 		Instantiate (deathEffect, transform.position, Quaternion.identity); 
+		PlayerStats.score += scoreAmount;
 	}
 
 	void atBase () {

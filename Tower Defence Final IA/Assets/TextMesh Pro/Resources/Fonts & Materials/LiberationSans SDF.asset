@@ -283,7 +283,7 @@ Material:
       data:
         first:
           name: _UnderlayColor
-        second: {r: 0, g: 0, b: 0, a: 0.5}
+        second: {r: 0.46323532, g: 0.034061424, b: 0.034061424, a: 0.5}
       data:
         first:
           name: _MaskCoord

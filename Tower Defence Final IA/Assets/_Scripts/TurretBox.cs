@@ -23,7 +23,7 @@ public class TurretBox : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		upgradeVersion = 0;
+		upgradeVersion = 1;
 		render = GetComponent<Renderer> ();
 		startColor = render.material.color;
 		shop = GameObject.Find ("Shop").GetComponent<Shop> ();

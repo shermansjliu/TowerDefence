@@ -156,11 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c93f78948d0041c6a99d9baa8931095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  moveSpeed: 12
+  scoreAmount: 50
+  moneyGained: 30
   deathEffect: {fileID: 144520, guid: a4b91e6625a79477fab9ddf405efb9f9, type: 2}
   healthBar: {fileID: 176802}
-  moneyGained: 50
+  health: 100
+  moveSpeed: 12
   damageToBase: 1
 --- !u!114 &11462386
 MonoBehaviour:

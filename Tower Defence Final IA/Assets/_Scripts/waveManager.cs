@@ -11,6 +11,7 @@ public class waveManager : MonoBehaviour {
 		public int numberOfEnemies;
 		public GameObject enemyType;
 		public float timeBetweenNextWave;
+		public int scoreAmount;
 	}
 	public int initialBuildTime;
 	public GameObject spawnLocation;
@@ -106,7 +107,7 @@ public class waveManager : MonoBehaviour {
 		//Start next wave and start the countdown.
 		currentWave++;
 		state = waveState.Coundown;
-
+		PlayerStats.score += wave[currentWave].scoreAmount;
 		
 	}
 

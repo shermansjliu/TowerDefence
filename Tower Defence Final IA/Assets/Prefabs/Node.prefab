@@ -418,6 +418,12 @@ MonoBehaviour:
   upgradePriceText: {fileID: 11446602}
   sellMoneyText: {fileID: 11406186}
   upgradeSTurr:
+  - prefab: {fileID: 0}
+    cost: 0
+    sellAmount: 40
+  - prefab: {fileID: 179088, guid: c794f992f392749e2aed177d97b6924d, type: 2}
+    cost: 240
+    sellAmount: 100
   - prefab: {fileID: 179088, guid: c794f992f392749e2aed177d97b6924d, type: 2}
     cost: 240
     sellAmount: 100
