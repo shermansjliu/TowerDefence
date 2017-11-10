@@ -9,6 +9,7 @@ public class TurretBox : MonoBehaviour {
 	private int upgradeVersion;
 	private Shop shop;
 
+
 	public TurretSetup selectedTurret;
 	public Color hoverColor;
 	public GameObject selectedTurretClone; 
@@ -24,6 +25,13 @@ public class TurretBox : MonoBehaviour {
 		render = GetComponent<Renderer> ();
 		startColor = render.material.color;
 		shop = GameObject.Find ("Shop").GetComponent<Shop> ();
+	}
+
+	void Update () {
+		//If esc key is hit delte upgrade ui
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			upgradeShop.SetActive (false);
+		}
 	}
 		
 
@@ -46,30 +54,27 @@ public class TurretBox : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		selectedTurret = shop.Buy();
+		
 		if (shop.currentTurret != null && !AlreadyATurret()) {
-			print ("hi");
+			selectedTurret = shop.Buy();
 			SpawnTurret ();
 			//Gets the ID of the turret instance that has just been spawned
+			if(AlreadyATurret())
 			UIManager._UImInstance.GetID (this.GetInstanceID());
 			shop.SpendMoney (selectedTurret);
 			//Deselect Turret;
 			shop.currentTurret = null;
 		} 
-		else {
-			
+		else if(selectedTurret.prefab!=null){
 			//When there is a turret already on the node and it is clicked on, spawn a the upgrade shop UI
-			upgradeShop.SetActive (true);
+			if (upgradeShop.activeInHierarchy == false) {
+				print("Spawn UI");
+				upgradeShop.SetActive (true);
+			}
 			//If the ID of another turret is not different don't do anyhing
-			if (!UIManager._UImInstance.DifferentID (this.GetInstanceID ())) {
-				return;
-			}
-			//If another turret is selected deactivate this turret box's upgrade UI
-			else {
-				upgradeShop.SetActive (false);
-			}
+		
 
-			print ("Already a turret");
+		
 		}
 	
 
@@ -111,6 +116,8 @@ public class TurretBox : MonoBehaviour {
 		PlayerStats.money += selectedTurret.sellAmount;
 		Destroy (selectedTurretClone);
 		selectedTurret = null;
+		upgradeShop.SetActive (false);
+
 
 	}
 

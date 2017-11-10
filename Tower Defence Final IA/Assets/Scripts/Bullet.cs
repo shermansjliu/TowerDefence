@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour {
 		
 
 	void FollowTarget () {
+		if(trail != null)
 		trail.Play ();
 		transform.position = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
 		if (Vector3.Distance(transform.position,target.position)<0.5f || target == null) {

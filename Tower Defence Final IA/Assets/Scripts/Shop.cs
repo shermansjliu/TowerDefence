@@ -9,10 +9,13 @@ public class Shop : MonoBehaviour {
 	public TurretSetup laserTurret;
 	public TurretSetup currentTurret;
 
+	public bool isCurrTurr;
+
 	// Use this for initialization
 
 
 	void Start(){
+		
 	}
 
 	
@@ -20,6 +23,7 @@ public class Shop : MonoBehaviour {
 
 	public TurretSetup Buy () {
 		if (PlayerStats.money >= currentTurret.cost) {
+			isCurrTurr = true;
 			return currentTurret;
 		}
 		return null;
