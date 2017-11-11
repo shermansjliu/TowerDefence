@@ -29,18 +29,19 @@ public class UpgradeShop : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (turretBox.selectedTurret != null) {
-			upgradePriceText.text = "UPGRADE\n" + SetPrice ();
-			sellMoneyText.text = "SELL\n" + SetSellPrice ();
-		}
+		upgradePriceText.text = "UPGRADE\n" + SetPrice ();
+		sellMoneyText.text = "SELL\n" + SetSellPrice ();
+
 	}
 
 
 	public void Upgrade () {
-		if (PlayerStats.money >= upgradeSTurr[turretBox.upgradeVersion].cost ) {
-				turretBox.UpgradeCurrentTurret (upgradeSTurr);	
+		if(GetTurretType().Contains("Standard")){
+			if (PlayerStats.money >= upgradeSTurr[turretBox.upgradeVersion].cost ) {
+					turretBox.UpgradeCurrentTurret (upgradeSTurr);	
+					PlayerStats.money -= upgradeSTurr[turretBox.upgradeVersion].cost;
+				}
 			}
-
 
 		}
 			
@@ -62,13 +63,12 @@ public class UpgradeShop : MonoBehaviour {
 	}
 
 	public int SetSellPrice (){
-		if(turretBox.selectedTurret != null){
 			//The index of upgradeversion is -1 because it is setting the sell amount of the current turret not the next one
-			if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion-1].sellAmount;}
-			if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
-			if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
+		if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion-1].sellAmount;}
+		if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
+		if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
+	
 
-		}
 
 		return 0;
 
@@ -77,11 +77,8 @@ public class UpgradeShop : MonoBehaviour {
 
 
 	public string GetTurretType () {
-		if (GetTurretType ().Contains ("Standard")) {
-			return turretBox.selectedTurret.prefab.name;
-		} else {
-			return "";
-		}
+		return turretBox.selectedTurret.prefab.name;
+		
 	}
 
 
