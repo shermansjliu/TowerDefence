@@ -40,7 +40,7 @@ public class waveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentWave >= wave.Length) {
+		if (currentWave >= wave.Length-1) {
 			levelManager.LoadLevel ("NextLevel");
 		}
 		//Display countdown timer up to two decimal places

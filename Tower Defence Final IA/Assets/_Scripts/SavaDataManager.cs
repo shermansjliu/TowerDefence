@@ -15,7 +15,7 @@ public static class SavaDataManager {
 	public static void SaveData (PlayerStats pm) {
 		//Create a new binary formatter to seralize the data from a script to binary format or vice versa
 		BinaryFormatter bf = new BinaryFormatter();
-		//save a serlizable class in a new filestream 
+		//Saves the data in a custom file extension in the game folder 
 		FileStream wStream= new FileStream(Application.persistentDataPath + "WaveState.sav",FileMode.Create);
 		FileStream pStream = new FileStream (Application.persistentDataPath + "/playerstats.sav",FileMode.Create);
 		//Create a new player stats instance

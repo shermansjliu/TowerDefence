@@ -8,7 +8,7 @@ public class MusicPlayer : MonoBehaviour {
 	public AudioClip menuSong;
 	public AudioClip gameSong;
 
-	static MusicPlayer mpInstance = null;
+	public static MusicPlayer mpInstance = null;
 	AudioSource audioSource;
 	private int sceneIndex;
 
