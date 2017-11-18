@@ -5,15 +5,10 @@ using TMPro;
 
 public class PlayerStats : MonoBehaviour {
 
-	public static int money;
-	public static int health ;
-	public static int score;
+
 
 	public int startMoney;
 	public int startHealth;
-	public int saveMoney;
-	public int saveHealth;
-	public int highScore;
 
 	public TextMeshProUGUI moneyText;
 	public TextMeshProUGUI healthText;
@@ -22,19 +17,16 @@ public class PlayerStats : MonoBehaviour {
 
 
 	void Start () {
-		score = 0;
-		money = startMoney;
-		health = startHealth;
+		SaveDataManager.score = 0;
+		SaveDataManager.money = startMoney;
+		SaveDataManager.health = startHealth;
 		InvokeRepeating ("UpdateText", 0, 0.3f);
 	}
 
 	void UpdateText () {
-		saveMoney = money;
-		saveHealth = health;
-		highScore = score;
-		scoreText.text = "Score " + score;
-		moneyText.text = "$" + money;
-		healthText.text = "Lives " + health;
+		scoreText.text = "Score " +  SaveDataManager.score;
+		moneyText.text = "$" + SaveDataManager.money;
+		healthText.text = "Lives " + SaveDataManager.health;
 	}
 
 }

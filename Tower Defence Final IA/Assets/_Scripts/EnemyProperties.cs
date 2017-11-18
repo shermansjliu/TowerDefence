@@ -44,7 +44,8 @@ public class EnemyProperties : MonoBehaviour {
 		healthBar.transform.localScale -= new Vector3(damage/maxHealth, 0, 0);
 		if (health <= 0) {
 			Dead ();
-			PlayerStats.money += moneyGained;
+			SaveDataManager.score += scoreAmount;
+			SaveDataManager.money += moneyGained;
 
 		}
 	}
@@ -56,13 +57,13 @@ public class EnemyProperties : MonoBehaviour {
 	void Dead () {
 		Destroy (gameObject);
 		Instantiate (deathEffect, transform.position, Quaternion.identity); 
-		PlayerStats.score += scoreAmount;
+
 	}
 
 	void atBase () {
 		if (wayPointIndex >= StoreWayPoints.wayPoints.Length) {
 			Dead ();
-			PlayerStats.health -= damageToBase;
+			SaveDataManager.health -= damageToBase;
 		}	
 	}
 

@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour {
 	// Update is called once per frame
 
 	public TurretSetup Buy () {
-		if (PlayerStats.money >= currentTurret.cost) {
+		if (SaveDataManager.money >= currentTurret.cost) {
 			isCurrTurr = true;
 			return currentTurret;
 		}
@@ -44,7 +44,7 @@ public class Shop : MonoBehaviour {
 	}
 
 	public void SpendMoney (TurretSetup selectedTurret){
-		PlayerStats.money -= selectedTurret.cost;
+		SaveDataManager.money -= selectedTurret.cost;
 		
 	}
 

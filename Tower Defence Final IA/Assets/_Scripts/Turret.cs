@@ -83,7 +83,7 @@ public class Turret : MonoBehaviour {
 		//Interpolates the amount needed to rotate the turret. This is used to smoothen the rotation and make sure the rotation is constant
 		partThatRotates.transform.rotation = Quaternion.Lerp (partThatRotates.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 		//Check that angle difference < 15 before firing projectile
-		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 20) {
+		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 25) {
 			if (fireTimer <= 0 ) {
 				Fire ();
 			}

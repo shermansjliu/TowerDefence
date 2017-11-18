@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: 0, z: -40}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -418,19 +418,22 @@ MonoBehaviour:
   upgradePriceText: {fileID: 11446602}
   sellMoneyText: {fileID: 11406186}
   upgradeSTurr:
-  - prefab: {fileID: 0}
+  - prefab: {fileID: 152034, guid: f1c62f95ac39a43f19ac0c3210af8eb5, type: 2}
     cost: 0
     sellAmount: 40
   - prefab: {fileID: 179088, guid: c794f992f392749e2aed177d97b6924d, type: 2}
     cost: 240
     sellAmount: 100
-  - prefab: {fileID: 179088, guid: c794f992f392749e2aed177d97b6924d, type: 2}
-    cost: 240
+  - prefab: {fileID: 116028, guid: 08a94a9c0045a470394dc8412be57aee, type: 2}
+    cost: 550
     sellAmount: 100
   upgradeMTurr:
   - prefab: {fileID: 0}
     cost: 0
     sellAmount: 0
+  - prefab: {fileID: 127444, guid: ed990a555a476422cb97d9b68ae7524a, type: 2}
+    cost: 250
+    sellAmount: 125
   - prefab: {fileID: 0}
     cost: 0
     sellAmount: 0
@@ -676,6 +679,7 @@ MonoBehaviour:
   hoverColor: {r: 0.1376514, g: 0.49424586, b: 0.9852941, a: 0}
   selectedTurretClone: {fileID: 0}
   upgradeShopUI: {fileID: 175846}
+  upgradeButton: {fileID: 143862}
 --- !u!114 &11486766
 MonoBehaviour:
   m_ObjectHideFlags: 1

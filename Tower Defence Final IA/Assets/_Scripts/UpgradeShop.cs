@@ -36,14 +36,14 @@ public class UpgradeShop : MonoBehaviour {
 
 
 	public void Upgrade () {
-		if(GetTurretType().Contains("Standard")){
-			if (PlayerStats.money >= upgradeSTurr[turretBox.upgradeVersion].cost ) {
-					turretBox.UpgradeCurrentTurret (upgradeSTurr);	
-					PlayerStats.money -= upgradeSTurr[turretBox.upgradeVersion].cost;
-				}
+		if (GetTurretType ().Contains ("Standard")) {
+			if (SaveDataManager.money >= upgradeSTurr [turretBox.upgradeVersion].cost) {
+				turretBox.UpgradeCurrentTurret (upgradeSTurr);	
+				SaveDataManager.money -= upgradeSTurr [turretBox.upgradeVersion].cost;
 			}
-
 		}
+
+	}
 			
 
 	public void SellTurret () {
@@ -52,9 +52,16 @@ public class UpgradeShop : MonoBehaviour {
 
 	public int SetPrice (){
 		//Set the upgrade price on the correct upgrade path
-		if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion].cost;}
-		if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion].cost;
-		if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion].cost;
+
+		if (GetTurretType().Contains("Standard")) {
+			if(turretBox.upgradeVersion < upgradeSTurr.Length)
+				return upgradeSTurr [turretBox.upgradeVersion].cost;}
+		if (GetTurretType ().Contains ("Missile")) {
+			return upgradeLTurr [turretBox.upgradeVersion].cost;
+		}
+		if (GetTurretType ().Contains ("Laser")) {
+			return upgradeLTurr [turretBox.upgradeVersion].cost;
+		}
 
 
 
@@ -76,8 +83,9 @@ public class UpgradeShop : MonoBehaviour {
 
 
 
+
 	public string GetTurretType () {
-		return turretBox.selectedTurret.prefab.name;
+		return turretBox.selectedTurretClone.name;
 		
 	}
 

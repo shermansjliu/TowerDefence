@@ -16,6 +16,7 @@ public class TurretBox : MonoBehaviour {
 	public Color hoverColor;
 	public GameObject selectedTurretClone; 
 	public GameObject upgradeShopUI;
+	public GameObject upgradeButton;
 
 
 
@@ -45,7 +46,7 @@ public class TurretBox : MonoBehaviour {
 	void OnMouseEnter () {
 		if (shop.currentTurret.prefab == null) {
 			render.material.color = startColor;
-		}else if(PlayerStats.money < shop.currentTurret.cost){
+		}else if(SaveDataManager.money < shop.currentTurret.cost){
 			render.material.color = Color.red;
 		}
 		else {
@@ -76,10 +77,6 @@ public class TurretBox : MonoBehaviour {
 		else if(selectedTurret.prefab!=null){
 			//When there is a turret already on the node and it is clicked on, spawn a the upgrade shop UI
 			if (upgradeShopUI.activeInHierarchy == false) {
-
-	
-			//	upgradePriceText.text = "UPGRADE\n" + upgradePrice;
-				print("Spawn UI");
 				upgradeShopUI.SetActive (true);
 			}
 			//If the ID of another turret is not different don't do anyhing
@@ -115,7 +112,8 @@ public class TurretBox : MonoBehaviour {
 			//Spawn the new upgraded Turret;
 			SpawnTurret ();
 			upgradeVersion++;
-		} else {
+		} if(upgradeVersion == upgradedTurret.Length){
+			upgradeButton.SetActive (false);
 			Debug.Log ("Cannot Upgrade anymore");
 		}
 
@@ -124,9 +122,10 @@ public class TurretBox : MonoBehaviour {
 	}
 		
 	public void SellCurrentTurret() {
-		PlayerStats.money += selectedTurret.sellAmount;
+		SaveDataManager.money += selectedTurret.sellAmount;
 		Destroy (selectedTurretClone);
 		selectedTurret = null;
+		upgradeVersion = 1;
 		upgradeShopUI.SetActive (false);
 
 

@@ -40,7 +40,7 @@ public class waveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentWave >= wave.Length-1) {
+		if (currentWave >= wave.Length) {
 			levelManager.LoadLevel ("NextLevel");
 		}
 		//Display countdown timer up to two decimal places
@@ -107,7 +107,7 @@ public class waveManager : MonoBehaviour {
 		//Start next wave and start the countdown.
 		currentWave++;
 		state = waveState.Coundown;
-		PlayerStats.score += wave[currentWave].scoreAmount;
+		SaveDataManager.score += wave[currentWave].scoreAmount;
 		
 	}
 
