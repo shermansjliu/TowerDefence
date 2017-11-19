@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 498926}
   - 114: {fileID: 11497982}
   m_Layer: 0
-  m_Name: Missile Launcher
+  m_Name: Missile Launcher Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127444}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 20, y: 0, z: -5}
+  m_LocalPosition: {x: 40.5, y: 0, z: -28.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
@@ -159,8 +159,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 24ebd7ec4371f414abee7af27d94b7e4, type: 2}
-  - {fileID: 2100000, guid: 675b489bd7e33410fb25030747fe8b80, type: 2}
+  - {fileID: 2100000, guid: 2cb5ead660899497ba9127971a082081, type: 2}
+  - {fileID: 2100000, guid: 0d65cf1893b6a4303adb07ddbd5eef0a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -229,13 +229,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotationSpeed: 7
-  bullet: {fileID: 115000, guid: 0f0bff813390b4c08bef18010f3c4962, type: 2}
+  rotationSpeed: 8
+  bullet: {fileID: 115000, guid: b2ebe217dfa5b4be9825f538d5d9d339, type: 2}
   fireLocation: {fileID: 137136}
   partThatRotates: {fileID: 133360}
-  range: 30
-  fireRate: 0.2
-  sellAmount: 120
+  range: 40
+  fireRate: 0.45
+  sellAmount: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -22,7 +22,7 @@ public class waveManager : MonoBehaviour {
 	public Wave[] wave;
 
 
-	private LevelManager levelManager;
+	public LevelManager levelManager;
 	private int currentWave;
 	private enum waveState {Spawning, Waiting, Coundown}
 	private  waveState state;
@@ -30,7 +30,6 @@ public class waveManager : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-		levelManager = GetComponent<LevelManager> ();
 		currentWave = 0;
 		state = waveState.Coundown;
 		countDownTimer = initialBuildTime;

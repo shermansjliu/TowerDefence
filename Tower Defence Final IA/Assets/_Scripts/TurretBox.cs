@@ -63,6 +63,7 @@ public class TurretBox : MonoBehaviour {
 
 	void OnMouseDown () {
 		
+		
 		if (shop.currentTurret != null && !AlreadyATurret()) {
 			selectedTurret = shop.Buy();
 			SpawnTurret ();
@@ -89,7 +90,7 @@ public class TurretBox : MonoBehaviour {
 	}
 
 	void SpawnTurret () {
-		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, Quaternion.identity);
+		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
 
 	}
 

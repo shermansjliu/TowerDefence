@@ -76,10 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef65505e78ea841db899c078e3cd6e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 40
   deathEffect: {fileID: 144520, guid: 93a8c05dca85f4053b9643d8f497b619, type: 2}
   radius: 0
-  damageAmount: 30
+  damageAmount: 25
 --- !u!135 &13510620
 SphereCollider:
   m_ObjectHideFlags: 1

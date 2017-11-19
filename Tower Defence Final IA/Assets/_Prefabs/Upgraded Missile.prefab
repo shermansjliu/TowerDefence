@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 478180}
   - 114: {fileID: 11481750}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Upgraded Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115000}
   m_LocalRotation: {x: 0, y: -0.04807892, z: 0, w: 0.9988436}
-  m_LocalPosition: {x: 54.2, y: 3.58, z: -7.8}
+  m_LocalPosition: {x: 30.245478, y: 4.5, z: -65.59924}
   m_LocalScale: {x: 100.00002, y: 100.000015, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: -5.5116, z: 0}
   m_Children:
@@ -70,7 +70,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 212f21227ae0a4d43bfdc03ec2cac8a9, type: 2}
+  - {fileID: 2100000, guid: 5e631cc2e0980406797e4edca1eec4bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   deathEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
-  radius: 10
-  damageAmount: 50
+  radius: 15
+  damageAmount: 150
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
