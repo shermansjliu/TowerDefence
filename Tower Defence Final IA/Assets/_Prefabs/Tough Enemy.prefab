@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 150
-  moneyGained: 50
+  moneyGained: 200
   deathEffect: {fileID: 127858, guid: c00603ce9d7244b85aa1b81a27432bd1, type: 2}
   healthBar: {fileID: 134724}
   health: 400

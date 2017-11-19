@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 50
-  moneyGained: 30
+  moneyGained: 50
   deathEffect: {fileID: 144520, guid: a4b91e6625a79477fab9ddf405efb9f9, type: 2}
   healthBar: {fileID: 176802}
-  health: 70
-  moveSpeed: 12
+  health: 90
+  moveSpeed: 10
   damageToBase: 1
 --- !u!114 &11462386
 MonoBehaviour:

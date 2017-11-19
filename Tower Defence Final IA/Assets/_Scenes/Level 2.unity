@@ -5196,38 +5196,52 @@ MonoBehaviour:
   initialBuildTime: 30
   spawnLocation: {fileID: 1605219078}
   countDownTimer: 0
+  waveNumberText: {fileID: 0}
   countDownText: {fileID: 967366481}
   wave:
   - spawnRate: 1
-    numberOfEnemies: 4
-    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
-    timeBetweenNextWave: 0
+    numberOfEnemies: 12
+    enemyType:
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    timeBetweenNextWave: 10
     scoreAmount: 200
-  - spawnRate: 0.8
-    numberOfEnemies: 4
-    enemyType: {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+  - spawnRate: 1.5
+    numberOfEnemies: 13
+    enemyType:
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
     timeBetweenNextWave: 8
     scoreAmount: 350
-  - spawnRate: 0.4
-    numberOfEnemies: 2
-    enemyType: {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+  - spawnRate: 0.8
+    numberOfEnemies: 20
+    enemyType:
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    - {fileID: 182960, guid: 6735d80d2b380498984f8d91b63b7dde, type: 2}
     timeBetweenNextWave: 15
     scoreAmount: 500
-  - spawnRate: 0.4
-    numberOfEnemies: 5
-    enemyType: {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
-    timeBetweenNextWave: 4
+  - spawnRate: 0.3
+    numberOfEnemies: 4
+    enemyType:
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    timeBetweenNextWave: 3
     scoreAmount: 800
-  - spawnRate: 12
-    numberOfEnemies: 5
-    enemyType: {fileID: 144520, guid: a4b91e6625a79477fab9ddf405efb9f9, type: 2}
-    timeBetweenNextWave: 0
-    scoreAmount: 0
-  - spawnRate: 1
-    numberOfEnemies: 5
-    enemyType: {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
-    timeBetweenNextWave: 4
-    scoreAmount: 0
+  - spawnRate: 1.2
+    numberOfEnemies: 16
+    enemyType:
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    timeBetweenNextWave: 20
+    scoreAmount: 500
+  - spawnRate: 1.2
+    numberOfEnemies: 25
+    enemyType:
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 182960, guid: 6735d80d2b380498984f8d91b63b7dde, type: 2}
+    - {fileID: 182960, guid: 6735d80d2b380498984f8d91b63b7dde, type: 2}
+    timeBetweenNextWave: 1
+    scoreAmount: 1500
   levelManager: {fileID: 2033922092}
 --- !u!1001 &874538996
 Prefab:
@@ -13016,7 +13030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b49519c0b740431f967314e15125ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 300
+  startMoney: 5000
   startHealth: 20
   moneyText: {fileID: 1625100761}
   healthText: {fileID: 369375605}

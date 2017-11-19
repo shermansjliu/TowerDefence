@@ -115,7 +115,6 @@ public class TurretBox : MonoBehaviour {
 			upgradeVersion++;
 		} if(upgradeVersion == upgradedTurret.Length){
 			upgradeButton.SetActive (false);
-			Debug.Log ("Cannot Upgrade anymore");
 		}
 
 	

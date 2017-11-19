@@ -9,7 +9,7 @@ public class waveManager : MonoBehaviour {
 	public class Wave{
 		public float spawnRate;
 		public int numberOfEnemies;
-		public GameObject enemyType;
+		public GameObject[] enemyType;
 		public float timeBetweenNextWave;
 		public int scoreAmount;
 	}
@@ -17,12 +17,14 @@ public class waveManager : MonoBehaviour {
 	public GameObject spawnLocation;
 	public float countDownTimer;
 
+	public TextMeshProUGUI waveNumberText;
 	public TextMeshProUGUI countDownText;
 
 	public Wave[] wave;
 
 
 	public LevelManager levelManager;
+	private int waveNum;
 	private int currentWave;
 	private enum waveState {Spawning, Waiting, Coundown}
 	private  waveState state;
@@ -31,23 +33,29 @@ public class waveManager : MonoBehaviour {
 
 	void Start () {
 		currentWave = 0;
+		waveNum = 1;
 		state = waveState.Coundown;
 		countDownTimer = initialBuildTime;
+		waveNumberText.text = "" + waveNum + "/" + wave.Length;
+
 
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentWave >= wave.Length) {
+		
+		if (waveNum > wave.Length) {
 			levelManager.LoadLevel ("NextLevel");
+			if (LevelManager.levelNo > 3)
+				levelManager.LoadLevel ("Win Screen");
 		}
 		//Display countdown timer up to two decimal places
 		countDownText.text = countDownTimer.ToString ("F2");
-		if (countDownTimer <= 0) {
+		if (countDownTimer <= 0 && waveNum <= wave.Length) {
 			//Reset countdown timer
-			countDownTimer = wave[currentWave].timeBetweenNextWave;
-			StartCoroutine(StartNextWave());
+			countDownTimer = wave [currentWave].timeBetweenNextWave;
+			StartCoroutine (StartNextWave ());
 		} 
 
 		if (state == waveState.Waiting) {
@@ -69,7 +77,8 @@ public class waveManager : MonoBehaviour {
 		state = waveState.Spawning;
 		for (int i = 0; i < wave[currentWave].numberOfEnemies; i++) {
 			//Spawn one instance of an enemy if i < the number of enemies integer
-			SpawnEnemy (wave[currentWave].enemyType);
+			//Spawn an enemy based on the random enemy generated
+			SpawnEnemy (wave[currentWave].enemyType[Random.Range(0,wave[currentWave].enemyType.Length)]);
 			//Make sure that an enemy only spawns after the spawnrate timer is done
 			yield return new WaitForSeconds (1.0f / wave[currentWave].spawnRate);
 
@@ -105,6 +114,8 @@ public class waveManager : MonoBehaviour {
 	void WaveComplete () {
 		//Start next wave and start the countdown.
 		currentWave++;
+		waveNum++;
+		waveNumberText.text = "" +  waveNum + "/" + wave.Length;
 		state = waveState.Coundown;
 		SaveDataManager.score += wave[currentWave].scoreAmount;
 		

@@ -81,7 +81,7 @@ GameObject:
   - 114: {fileID: 11414462}
   m_Layer: 0
   m_Name: FastEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,12 +159,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 20
-  moneyGained: 10
+  moneyGained: 30
   deathEffect: {fileID: 144520, guid: f66ac634b3d16417d9bc70049c6093f7, type: 2}
   healthBar: {fileID: 180544}
-  health: 30
+  health: 70
   moveSpeed: 20
-  damageToBase: 0
+  damageToBase: 1
 --- !u!114 &11434842
 MonoBehaviour:
   m_ObjectHideFlags: 1

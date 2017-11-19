@@ -29,7 +29,6 @@ public class Shop : MonoBehaviour {
 	}
 
 	public	void SelectStandardTurret () {
-		print ("HI");
 		currentTurret = standardTurret;
 	}
 
