@@ -15,4 +15,7 @@ public class LevelManager : MonoBehaviour {
 		levelNo++;
 	}
 		
+	public void QuitGame () {
+		Application.Quit();
+	}
 }

@@ -6,7 +6,7 @@ public class TurretBox : MonoBehaviour {
 
 	private Renderer render;
 	private Color startColor;
-	private Vector3 buildOffSet = new Vector3 (0, 0.37f, 0);
+	private Vector3 buildOffSet = new Vector3 (0, 0.5f, 0);
 
 	private Shop shop;
 
@@ -122,10 +122,11 @@ public class TurretBox : MonoBehaviour {
 	}
 		
 	public void SellCurrentTurret() {
+		upgradeButton.SetActive (true);
+		upgradeVersion = 1;
 		SaveDataManager.money += selectedTurret.sellAmount;
 		Destroy (selectedTurretClone);
 		selectedTurret = null;
-		upgradeVersion = 1;
 		upgradeShopUI.SetActive (false);
 
 

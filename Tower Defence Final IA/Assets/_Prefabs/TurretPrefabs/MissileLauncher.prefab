@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 498926}
   - 114: {fileID: 11497982}
   m_Layer: 0
-  m_Name: Missile Launcher
+  m_Name: MissileLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

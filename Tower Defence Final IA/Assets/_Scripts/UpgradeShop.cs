@@ -38,11 +38,22 @@ public class UpgradeShop : MonoBehaviour {
 	public void Upgrade () {
 		if (GetTurretType ().Contains ("Standard")) {
 			if (SaveDataManager.money >= upgradeSTurr [turretBox.upgradeVersion].cost) {
-				turretBox.UpgradeCurrentTurret (upgradeSTurr);	
 				SaveDataManager.money -= upgradeSTurr [turretBox.upgradeVersion].cost;
+				turretBox.UpgradeCurrentTurret (upgradeSTurr);	
+
+			}
+
+		}else if (GetTurretType ().Contains ("Missile")) {
+			if (SaveDataManager.money >= upgradeMTurr [turretBox.upgradeVersion].cost) {
+				SaveDataManager.money -= upgradeMTurr [turretBox.upgradeVersion].cost;
+				turretBox.UpgradeCurrentTurret (upgradeMTurr);	
+			}
+		}else if (GetTurretType ().Contains ("Laser")) {
+			if (SaveDataManager.money >= upgradeLTurr [turretBox.upgradeVersion].cost) {
+				SaveDataManager.money -= upgradeLTurr [turretBox.upgradeVersion].cost;
+				turretBox.UpgradeCurrentTurret (upgradeLTurr);	
 			}
 		}
-
 	}
 			
 
@@ -57,7 +68,7 @@ public class UpgradeShop : MonoBehaviour {
 			if(turretBox.upgradeVersion < upgradeSTurr.Length)
 				return upgradeSTurr [turretBox.upgradeVersion].cost;}
 		if (GetTurretType ().Contains ("Missile")) {
-			return upgradeLTurr [turretBox.upgradeVersion].cost;
+			return upgradeMTurr [turretBox.upgradeVersion].cost;
 		}
 		if (GetTurretType ().Contains ("Laser")) {
 			return upgradeLTurr [turretBox.upgradeVersion].cost;
@@ -72,7 +83,7 @@ public class UpgradeShop : MonoBehaviour {
 	public int SetSellPrice (){
 			//The index of upgradeversion is -1 because it is setting the sell amount of the current turret not the next one
 		if (GetTurretType().Contains("Standard")) {return upgradeSTurr [turretBox.upgradeVersion-1].sellAmount;}
-		if (GetTurretType().Contains("Missile")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
+		if (GetTurretType().Contains("Missile")) return upgradeMTurr[turretBox.upgradeVersion-1].sellAmount;
 		if (GetTurretType().Contains ("Laser")) return upgradeLTurr[turretBox.upgradeVersion-1].sellAmount;
 	
 

@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef65505e78ea841db899c078e3cd6e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 50
   deathEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
   radius: 15
   damageAmount: 150
