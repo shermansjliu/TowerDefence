@@ -32,6 +32,7 @@ public class waveManager : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+		print (wave.Length);
 		currentWave = 0;
 		waveNum = 1;
 		state = waveState.Coundown;

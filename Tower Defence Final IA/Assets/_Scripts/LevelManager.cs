@@ -8,6 +8,9 @@ public class LevelManager : MonoBehaviour {
 
 	public void LoadLevel (string name){
 		SceneManager.LoadScene (name);
+		if(name.Equals("Start")){
+			levelNo = 0;	
+		}
 	}
 
 	public void LoadNextLevel () {

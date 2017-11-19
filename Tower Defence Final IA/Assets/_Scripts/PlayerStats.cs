@@ -17,7 +17,6 @@ public class PlayerStats : MonoBehaviour {
 
 
 	void Start () {
-		SaveDataManager.score = 0;
 		SaveDataManager.money = startMoney;
 		SaveDataManager.health = startHealth;
 		InvokeRepeating ("UpdateText", 0, 0.3f);

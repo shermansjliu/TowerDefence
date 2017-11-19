@@ -4507,6 +4507,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a372208fc4bae41c885681c30c429816, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &740998121 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11450316, guid: a372208fc4bae41c885681c30c429816,
+    type: 2}
+  m_PrefabInternal: {fileID: 740998120}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1001 &751386886
 Prefab:
   m_ObjectHideFlags: 0
@@ -5245,7 +5251,7 @@ MonoBehaviour:
   initialBuildTime: 30
   spawnLocation: {fileID: 1605219078}
   countDownTimer: 0
-  waveNumberText: {fileID: 0}
+  waveNumberText: {fileID: 740998121}
   countDownText: {fileID: 967366481}
   wave:
   - spawnRate: 1

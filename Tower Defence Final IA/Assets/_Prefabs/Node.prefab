@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 0, z: -50}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -426,7 +426,7 @@ MonoBehaviour:
     sellAmount: 100
   - prefab: {fileID: 116028, guid: 08a94a9c0045a470394dc8412be57aee, type: 2}
     cost: 500
-    sellAmount: 200
+    sellAmount: 225
   upgradeMTurr:
   - prefab: {fileID: 0}
     cost: 0

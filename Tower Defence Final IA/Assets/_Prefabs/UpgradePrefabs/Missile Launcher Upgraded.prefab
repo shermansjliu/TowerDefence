@@ -234,7 +234,7 @@ MonoBehaviour:
   fireLocation: {fileID: 137136}
   partThatRotates: {fileID: 133360}
   range: 40
-  fireRate: 0.45
+  fireRate: 0.3
   sellAmount: 100
 --- !u!1001 &100100000
 Prefab:
