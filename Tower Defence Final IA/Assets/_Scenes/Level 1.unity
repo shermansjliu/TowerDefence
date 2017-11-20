@@ -15673,7 +15673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154891085cf5c4269b2e75601bc55d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBuildTime: 5
+  initialBuildTime: 30
   spawnLocation: {fileID: 434207673}
   countDownTimer: 0
   waveNumberText: {fileID: 1857401147}
@@ -15682,7 +15682,7 @@ MonoBehaviour:
   - spawnRate: 1
     numberOfEnemies: 3
     enemyType:
-    - {fileID: 136060, guid: d39d04d8a44fd4e039576285a9cd8557, type: 2}
+    - {fileID: 106952, guid: 7e1a4c3a280b44608ba18c5f60ee4947, type: 2}
     timeBetweenNextWave: 3
     scoreAmount: 50
   - spawnRate: 1
@@ -25494,7 +25494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b49519c0b740431f967314e15125ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 5000
+  startMoney: 180
   startHealth: 20
   moneyText: {fileID: 3831828}
   healthText: {fileID: 1168058651}

@@ -6,7 +6,7 @@ public class TurretBox : MonoBehaviour {
 
 	private Renderer render;
 	private Color startColor;
-	private Vector3 buildOffSet = new Vector3 (0, 0.5f, 0);
+	private Vector3 buildOffSet = new Vector3 (0, 0.7f, 0);
 
 	private Shop shop;
 
