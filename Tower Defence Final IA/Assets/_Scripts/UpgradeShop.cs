@@ -29,8 +29,10 @@ public class UpgradeShop : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		upgradePriceText.text = "UPGRADE\n" + SetPrice ();
-		sellMoneyText.text = "SELL\n" + SetSellPrice ();
+		if (turretBox.selectedTurretClone != null) {
+			upgradePriceText.text = "UPGRADE\n" + SetPrice ();
+			sellMoneyText.text = "SELL\n" + SetSellPrice ();
+		}
 
 	}
 

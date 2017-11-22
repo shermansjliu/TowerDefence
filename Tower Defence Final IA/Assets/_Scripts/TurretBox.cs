@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+
 
 public class TurretBox : MonoBehaviour {
 
@@ -39,10 +41,7 @@ public class TurretBox : MonoBehaviour {
 
 			
 	}
-
-
-		
-
+	#region MouseInteraction
 	void OnMouseEnter () {
 		if (shop.currentTurret.prefab == null) {
 			render.material.color = startColor;
@@ -54,16 +53,13 @@ public class TurretBox : MonoBehaviour {
 		}
 
 	}
-
-
+		
 
 	void OnMouseExit () {
 		render.material.color = startColor;
 	}
 
 	void OnMouseDown () {
-		
-		
 		if (shop.currentTurret != null && !AlreadyATurret()) {
 			selectedTurret = shop.Buy();
 			SpawnTurret ();
@@ -81,13 +77,10 @@ public class TurretBox : MonoBehaviour {
 				upgradeShopUI.SetActive (true);
 			}
 			//If the ID of another turret is not different don't do anyhing
-		
-
-		
 		}
-	
-
 	}
+
+	#endregion
 
 	void SpawnTurret () {
 		selectedTurretClone = (GameObject)Instantiate (selectedTurret.prefab, transform.position + buildOffSet, transform.rotation);
@@ -98,9 +91,7 @@ public class TurretBox : MonoBehaviour {
 		if (selectedTurretClone == null) {
 			return false;
 		} 
-	
 		return true;
-		
 	}
 
 	public void UpgradeCurrentTurret (TurretSetup[] upgradedTurret){
@@ -116,9 +107,6 @@ public class TurretBox : MonoBehaviour {
 		} if(upgradeVersion == upgradedTurret.Length){
 			upgradeButton.SetActive (false);
 		}
-
-	
-	
 	}
 		
 	public void SellCurrentTurret() {
@@ -129,8 +117,8 @@ public class TurretBox : MonoBehaviour {
 		selectedTurret = null;
 		upgradeShopUI.SetActive (false);
 
-
 	}
 
-		
+
+
 }

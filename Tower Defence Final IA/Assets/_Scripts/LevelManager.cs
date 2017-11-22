@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour {
 		SceneManager.LoadScene (name);
 		if(name.Equals("Start")){
 			levelNo = 0;	
-		}
+		} 
 	}
 
 	public void LoadNextLevel () {
@@ -20,5 +20,15 @@ public class LevelManager : MonoBehaviour {
 		
 	public void QuitGame () {
 		Application.Quit();
+	}
+
+	public void TryAgain () {
+		SaveDataManager.score = 0;
+		SceneManager.LoadScene ("Level" + levelNo);
+	}
+
+	public void PlayAgain () {
+		SceneManager.LoadScene ("Level 1");
+		levelNo = 1;
 	}
 }
