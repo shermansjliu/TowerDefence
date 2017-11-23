@@ -8,7 +8,7 @@ using TMPro;
 
 public class SaveDataManager : MonoBehaviour {
 
-	public string key = "Highscore";
+	public static string key = "Highscore";
 
 	public static SaveDataManager saveDataInstance = null;
 	public static int money;

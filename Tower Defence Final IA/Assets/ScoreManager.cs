@@ -14,17 +14,27 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	public void ResetHighScore ()	{
-		PlayerPrefs.DeleteKey (SaveDataManager.saveDataInstance.key);
+		PlayerPrefs.DeleteKey (SaveDataManager.key);
+		Debug.Log(PlayerPrefs.GetInt( SaveDataManager.key));
 	}
 
 	public void SetCurrentScore () {
 		int finalScore = SaveDataManager.score + SaveDataManager.money * 3 ;
-		if(currentScore.text != null)
+		if(currentScore != null)
 			currentScore.text = "Score: " + finalScore;
+		else {
+			return;
+		}
 	}
 
 	public void SetHighScore () {
-		if(highScore.text != null)
-			highScore.text = "Highscore: " + PlayerPrefs.GetInt(SaveDataManager.saveDataInstance.key);
+		if (highScore != null) {
+			print (PlayerPrefs.GetInt ("Highscore"));
+
+			highScore.text = "Highscore: " + PlayerPrefs.GetInt (SaveDataManager.key);
+		}else {
+			return;
+
+		}
 	}
 }

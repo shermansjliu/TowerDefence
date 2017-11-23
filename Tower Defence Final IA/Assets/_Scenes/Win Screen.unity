@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 890952234}
   - 114: {fileID: 890952233}
+  - 114: {fileID: 890952235}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -508,6 +509,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &890952235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890952232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad9e52dd9a2645d4aff8716614f7200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: {fileID: 1586559413}
+  highScore: {fileID: 90119087}
 --- !u!1 &1058452973
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +763,6 @@ GameObject:
   - 92: {fileID: 1234419574}
   - 124: {fileID: 1234419573}
   - 81: {fileID: 1234419572}
-  - 114: {fileID: 1234419577}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -825,19 +838,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1234419577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234419571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad9e52dd9a2645d4aff8716614f7200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: {fileID: 1586559413}
-  highScore: {fileID: 90119087}
 --- !u!1 &1420560623
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ac3dbbf78204946836521b016224a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highsScore: {fileID: 1586559413}
 --- !u!114 &1586559413
 MonoBehaviour:
   m_ObjectHideFlags: 0
