@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -40}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -299,13 +299,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 11406186}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -441,8 +441,6 @@ MonoBehaviour:
   - prefab: {fileID: 140558, guid: 691997a84901f4a09b2a2fd42c0c275f, type: 2}
     cost: 1200
     sellAmount: 1800
-  isUISelected: 0
-  turretBox: {fileID: 0}
 --- !u!114 &11445560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,13 +554,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 11446602}
-    characterCount: 7
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -670,24 +668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78612221118240fb9ca6926c565af9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  render: {fileID: 0}
-  startColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  buildOffSet: {x: 0, y: 0.7, z: 0}
-  shop: {fileID: 0}
   upgradeVersion: 0
   selectedTurret:
     prefab: {fileID: 0}
     cost: 0
     sellAmount: 0
-  hoverColor:
-    r: 0.1376514
-    g: 0.49424586
-    b: 0.9852941
-    a: 1
+  hoverColor: {r: 0.1376514, g: 0.49424586, b: 0.9852941, a: 1}
   selectedTurretClone: {fileID: 0}
   upgradeShopUI: {fileID: 175846}
   upgradeButton: {fileID: 143862}
@@ -825,10 +811,10 @@ RectTransform:
   - {fileID: 22464930}
   m_Father: {fileID: 22456888}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: -22.5}
-  m_SizeDelta: {x: 50, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22456888
 RectTransform:
@@ -846,7 +832,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5.549999}
+  m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 50, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22464930
@@ -863,10 +849,10 @@ RectTransform:
   - {fileID: 22472698}
   m_Father: {fileID: 22445058}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 37.5, y: -22.5}
-  m_SizeDelta: {x: 25, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22472698
 RectTransform:
@@ -900,10 +886,10 @@ RectTransform:
   - {fileID: 22439930}
   m_Father: {fileID: 22445058}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12.5, y: -22.5}
-  m_SizeDelta: {x: 25, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:
