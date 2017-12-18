@@ -217,7 +217,6 @@ GameObject:
   - 224: {fileID: 90119085}
   - 222: {fileID: 90119088}
   - 114: {fileID: 90119087}
-  - 114: {fileID: 90119086}
   m_Layer: 5
   m_Name: Highscore
   m_TagString: Untagged
@@ -243,17 +242,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000024318695, y: -117.899994}
   m_SizeDelta: {x: 503.8, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90119086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 90119084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ac3dbbf78204946836521b016224a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &90119087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,8 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad9e52dd9a2645d4aff8716614f7200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: {fileID: 1586559413}
-  highScore: {fileID: 90119087}
+  currentScore: {fileID: 0}
+  highScore: {fileID: 0}
 --- !u!1 &1058452973
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +898,6 @@ GameObject:
   - 224: {fileID: 1586559411}
   - 222: {fileID: 1586559414}
   - 114: {fileID: 1586559413}
-  - 114: {fileID: 1586559412}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -936,17 +923,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -12.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1586559412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1586559410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ac3dbbf78204946836521b016224a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1586559413
 MonoBehaviour:
   m_ObjectHideFlags: 0

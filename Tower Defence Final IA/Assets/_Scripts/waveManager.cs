@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class waveManager : MonoBehaviour {
@@ -98,11 +99,17 @@ public class waveManager : MonoBehaviour {
 	//Check if enemies are alive, return true if there are enemies, return false if they're no enemies
 	bool EnemiesStillAlive () {
 		bool isAlive;
-		//Create a temporary gameobject array that store any game object with the tag "enemy"
-		GameObject[] numOfEnmies = GameObject.FindGameObjectsWithTag ("Enemy");
+	
 
+		List<GameObject> numEnemies = new List<GameObject>();
+
+		//numEnemies = GameObject.FindGameObjectsWithTag ("Enemy");
+
+		//Create a temporary gameobject array that store any game object with the tag "enemy"
+		GameObject[] numOfEnemies = GameObject.FindGameObjectsWithTag ("Enemy");
+			
 		//All enemies are dead
-		if (numOfEnmies.Length <= 0) {
+		if (numOfEnemies.Length <= 0) {
 			isAlive = false;
 			return isAlive;
 		}

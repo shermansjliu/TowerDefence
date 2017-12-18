@@ -14,7 +14,6 @@ public class World : MonoBehaviour {
 	
 	}
 	public GameObject[] CollectBuildingBoxes () {
-		List<GameObject> temp = new List<GameObject> ();
 		GameObject[] turretlist = GameObject.FindGameObjectsWithTag ("Building Block");
 
 	

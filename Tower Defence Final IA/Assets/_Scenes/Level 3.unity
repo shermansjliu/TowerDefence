@@ -6466,20 +6466,24 @@ MonoBehaviour:
   - spawnRate: 1
     numberOfEnemies: 5
     enemyType:
-    - {fileID: 0}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 179980, guid: d39d04d8a44fd4e039576285a9cd8557, type: 2}
     timeBetweenNextWave: 15
     scoreAmount: 0
   - spawnRate: 0.2
     numberOfEnemies: 3
     enemyType:
-    - {fileID: 0}
+    - {fileID: 179980, guid: d39d04d8a44fd4e039576285a9cd8557, type: 2}
     timeBetweenNextWave: 4
     scoreAmount: 20
-  - spawnRate: 0.1
-    numberOfEnemies: 5
+  - spawnRate: 0.5
+    numberOfEnemies: 8
     enemyType:
-    - {fileID: 0}
-    - {fileID: 126300, guid: 754aa5fbf019f4c0e8c89750ec395938, type: 2}
+    - {fileID: 179980, guid: d39d04d8a44fd4e039576285a9cd8557, type: 2}
     timeBetweenNextWave: 1
     scoreAmount: 5000
   levelManager: {fileID: 939619440}

@@ -9,7 +9,6 @@ using TMPro;
 public class SaveDataManager : MonoBehaviour {
 
 	public static string key = "Highscore";
-
 	public static SaveDataManager saveDataInstance = null;
 	public static int money;
 	public static int health;
@@ -120,22 +119,12 @@ public class SaveDataManager : MonoBehaviour {
 	}
 
 	public void SetCurrentScore(){
-
-
-
 		if((score + SaveDataManager.money * 3) > PlayerPrefs.GetInt (key, 0)){
 			SetHighScore ();
 		}
-	
+
+	}
 		
-
-	}
-
-	public void ShowHighscore () {
-		Debug.Log(PlayerPrefs.GetInt(key));
-
-	}
-
 }
 	
 

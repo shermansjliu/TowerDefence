@@ -29,8 +29,6 @@ public class ScoreManager : MonoBehaviour {
 
 	public void SetHighScore () {
 		if (highScore != null) {
-			print (PlayerPrefs.GetInt ("Highscore"));
-
 			highScore.text = "Highscore: " + PlayerPrefs.GetInt (SaveDataManager.key);
 		}else {
 			return;
