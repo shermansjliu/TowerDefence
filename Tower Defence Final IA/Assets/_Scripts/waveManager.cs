@@ -45,7 +45,9 @@ public class waveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown (KeyCode.Return)) {
+			Skip ();
+		}
 		if (waveNum > wave.Length) {
 			levelManager.LoadLevel ("NextLevel");
 			if (LevelManager.levelNo > 3)
@@ -71,6 +73,16 @@ public class waveManager : MonoBehaviour {
 			countDownTimer -= Time.deltaTime;
 		}
 
+	}
+
+	void Skip () {
+		if (state != waveState.Coundown) {
+			//IF wave is counting down render this function useless
+			return;
+			//If the user hits return make the counter 0
+		}else{
+			countDownTimer = 0;
+		}
 	}
 
 	IEnumerator StartNextWave () {

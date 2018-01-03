@@ -163,7 +163,7 @@ MonoBehaviour:
   deathEffect: {fileID: 144520, guid: f66ac634b3d16417d9bc70049c6093f7, type: 2}
   healthBar: {fileID: 180544}
   health: 70
-  moveSpeed: 20
+  moveSpeed: 22
   damageToBase: 1
 --- !u!114 &11434842
 MonoBehaviour:

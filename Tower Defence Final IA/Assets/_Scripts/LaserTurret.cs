@@ -53,38 +53,36 @@ public class LaserTurret : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
 
-	//Updates the turret's "current target"
 	void FindTarget () {
-		//By default whent here is no enemy
+		//Set the shortest distance to the longest distance possible
 		float shortestDistance = Mathf.Infinity;
-		//Find All enemies
-		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
-		//Get Vector3 of Closest Enemy
-		//For every enemy in targets array
-		foreach (GameObject enemy in targets) {
-			//If distance between the turret and the target is less than the current shortestDistance
-			float distance = Vector3.Distance (transform.position, enemy.transform.position);
-			if (distance < shortestDistance) {
-				//Make the shortestDistance equal to the new shortestDistance
-				shortestDistance = distance;
+		//Keep track of all enemy positions in the game.
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-				//if the shortest distance is within the turret range
-				if (shortestDistance <= range) {
-					//Make the targget the position of the enemy
-					target = enemy.transform;
-				} else {
-					//Else there should be no target
-					target = null;	
-					//Reset damage 
-				
-
+		foreach (GameObject enemy in enemies) {
+			
+			float distanceBetweenEnemy = Vector3.Distance (transform.position, enemy.transform.position);
+			if (target == null) {
+				if(distanceBetweenEnemy <= range){
+				//If an enemy walks into the range of the turret target that enemy
+					if (distanceBetweenEnemy < shortestDistance ) 
+						target = enemy.transform;
+					}
+					//Only when the target is outside the range then switch to a new target
+				}else if(Vector3.Distance (transform.position, target.position) > range){
+					print ("HI");
+					target = null;
 				}
 			}
-		}
 
+
+
+
+		//If the current target is out of range
+		//Get the closest target as target 
 	}
+		
 	//Rotate towards closest enemy if the target is within range
 	void RotateTurret () {
 		//Retrieve direction towards the enemy
@@ -121,7 +119,6 @@ public class LaserTurret : MonoBehaviour {
 		target.GetComponent<EnemyProperties> ().TakeDamage (damage * Time.deltaTime);
 		damage *= damageMultiplier;
 
-		print (target.Equals (target));
 		if (target.GetInstanceID() != previousTargetID) {
 			damage = startDamage;
 			previousTargetID = target.GetInstanceID();
