@@ -73,7 +73,7 @@ public class UpgradeShop : MonoBehaviour {
 			return upgradeMTurr [turretBox.upgradeVersion].cost;
 		}
 		if (GetTurretType ().Contains ("Laser")) {
-			return upgradeLTurr [turretBox.upgradeVersion].cost;
+			return upgradeLTurr [turretBox.upgradeVersion].cost;	
 		}
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StoreWayPoints : MonoBehaviour {
 
+	//Credit to Brackeys for this code to essentially "hack" path finding in a tedious manner
 	public static Transform[] wayPoints;
 
 	// Use this for initialization

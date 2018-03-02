@@ -16,14 +16,14 @@ public class Turret : MonoBehaviour {
 	public GameObject partThatRotates;
 	//Stores the range of the turret
 	public float range;
-	//Stores the shortestDistance between an enemy and the turret to make it its target
-	float shortestDistance; 
 	//Stores fireRate
 	public float fireRate;
 	public int sellAmount;
 
 
 	private float fireTimer = 0;
+	//Stores the shortestDistance between an enemy and the turret to make it its target
+	private float shortestDistance; 
 
 
 

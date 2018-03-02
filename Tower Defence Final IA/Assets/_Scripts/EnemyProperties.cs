@@ -49,18 +49,13 @@ public class EnemyProperties : MonoBehaviour {
 
 		}
 	}
-
-	public void TakeAreaDamage (float damage, float radius, Vector3 position){
-		TakeDamage (damage);
-	}
-
-	void Dead () {
+	private void Dead () {
 		Destroy (gameObject);
 		Instantiate (deathEffect, transform.position, Quaternion.identity); 
 
 	}
 
-	void atBase () {
+	private void atBase () {
 		if (wayPointIndex >= StoreWayPoints.wayPoints.Length) {
 			Dead ();
 			SaveDataManager.health -= damageToBase;

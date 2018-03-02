@@ -26,7 +26,7 @@ public class CamerMovement : MonoBehaviour {
 
 
 	}
-	// Update is called once per frame
+	// Update is called once per frame after all Physics calculations have been run
 	void FixedUpdate () {
 		if (Input.GetKey (KeyCode.W)) {MoveUp ();}
 		if (Input.GetKey (KeyCode.A)) {MoveLeft ();}

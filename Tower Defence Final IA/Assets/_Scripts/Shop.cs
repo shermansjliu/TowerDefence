@@ -10,16 +10,9 @@ public class Shop : MonoBehaviour {
 	public TurretSetup currentTurret;
 
 
-	// Use this for initialization
-
-
-	void Start(){
-		
-	}
-
 	
 	// Update is called once per frame
-
+	 
 	public TurretSetup Buy () {
 		if (SaveDataManager.money >= currentTurret.cost) {
 			return currentTurret;

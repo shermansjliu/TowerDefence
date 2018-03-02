@@ -71,7 +71,6 @@ public class LaserTurret : MonoBehaviour {
 					}
 					//Only when the target is outside the range then switch to a new target
 				}else if(Vector3.Distance (transform.position, target.position) > range){
-					print ("HI");
 					target = null;
 				}
 			}

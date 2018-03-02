@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour {
 	private int previousID;
 	// Use this for initialization
 	void Start () {
-	//	turretBoxID = 0;
+		//	turretBoxID = 0;
 		_UImInstance = this;
 
 	}

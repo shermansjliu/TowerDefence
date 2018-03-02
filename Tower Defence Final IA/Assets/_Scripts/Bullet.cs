@@ -9,13 +9,26 @@ public class Bullet : MonoBehaviour {
 	public float damageAmount;
 
 	private ParticleSystem trail;
+	private Transform target;
 
 
 	void Start () {
 		trail = GetComponent<ParticleSystem> ();
 	}
 
-	Transform target;
+	//Called once per frame
+	void Update () {
+		if (target != null) {
+			FollowTarget ();
+		}
+		//Destroy game object if the target is no longer there (so that there are no bullets that are left mid air with no target)
+		if (target == null) {
+			Destroy (gameObject);
+
+		}
+	}
+
+
 	// Use this for initialization
 	public void SetTarget (Transform targetT) {
 		target = targetT;
@@ -58,7 +71,7 @@ public class Bullet : MonoBehaviour {
 			target.GetComponent<EnemyProperties> ().TakeDamage (damageAmount);
 		}
 	}
-	int enemyCount = 0;
+
 	void AOEDamage (Vector3 position, float radius) {
 		//Stores all detected gameobjects with a collider component into an list because lists have explicit types
 		Collider[] EnemieswithinRange = Physics.OverlapSphere (position, radius);
@@ -70,7 +83,7 @@ public class Bullet : MonoBehaviour {
 				EnemyProperties enemyHit = col.GetComponent<EnemyProperties> ();
 				//call the method of standard enemy to deal damage to enemy
 				enemyHit.TakeDamage (damageAmount);
-				enemyCount++;
+
 			}
 		}
 	}
@@ -82,17 +95,5 @@ public class Bullet : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (target != null) {
-			FollowTarget ();
-		}
-		//Destroy game object if the target is no longer there (so that there are no bullets that are left mid air with no target)
-		if (target == null) {
-			Destroy (gameObject);
 
-		}
-
-	
-	}
 }

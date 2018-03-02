@@ -21,14 +21,14 @@ public class LevelManager : MonoBehaviour {
 	public void QuitGame () {
 		Application.Quit();
 	}
-
-	public void TryAgain () {
-		SaveDataManager.score = 0;
-		SceneManager.LoadScene ("Level" + levelNo);
-	}
-
+		
 	public void PlayAgain () {
 		SceneManager.LoadScene ("Level 1");
 		levelNo = 1;
 	}
+
+	public void LoseLevel() {
+		SceneManager.LoadScene ("Lose Screen");
+	}
+	
 }

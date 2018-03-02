@@ -5,15 +5,6 @@ using TMPro;
 
 public class waveManager : MonoBehaviour {
 
-
-	[System.Serializable]
-	public class Wave{
-		public float spawnRate;
-		public int numberOfEnemies;
-		public GameObject[] enemyType;
-		public float timeBetweenNextWave;
-		public int scoreAmount;
-	}
 	public int initialBuildTime;
 	public GameObject spawnLocation;
 	public float countDownTimer;
@@ -38,29 +29,30 @@ public class waveManager : MonoBehaviour {
 		state = waveState.Coundown;
 		countDownTimer = initialBuildTime;
 		waveNumberText.text = "" + waveNum + "/" + wave.Length;
-
-
-	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
+		//Skip the countdown timer if user hits "Return"
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			Skip ();
 		}
-		if (waveNum > wave.Length) {
+		//Load the next wevel once all the waves have been iterated through
+		if (waveNum > wave.Length){
 			levelManager.LoadLevel ("NextLevel");
+		//Once level three has ended load the "Win screen"
 			if (LevelManager.levelNo > 3)
 				levelManager.LoadLevel ("Win Screen");
 		}
 		//Display countdown timer up to two decimal places
 		countDownText.text = countDownTimer.ToString ("F2");
+		//If the wave timer is 0 and the last wave has not been reached
 		if (countDownTimer <= 0 && waveNum <= wave.Length) {
-			//Reset countdown timer
+			//Reset countdown timer to 0
 			countDownTimer = wave [currentWave].timeBetweenNextWave;
+		//Start the next wave
 			StartCoroutine (StartNextWave ());
 		} 
-
+		//If enemies are no longer alive the wave is complete
 		if (state == waveState.Waiting) {
 			if (!EnemiesStillAlive ()) {
 				WaveComplete ();
@@ -69,6 +61,7 @@ public class waveManager : MonoBehaviour {
 				return;
 			}
 		}
+		//Decrease the countdown
 		if (state == waveState.Coundown) {
 			countDownTimer -= Time.deltaTime;
 		}
@@ -77,7 +70,7 @@ public class waveManager : MonoBehaviour {
 
 	void Skip () {
 		if (state != waveState.Coundown) {
-			//IF wave is counting down render this function useless
+			//If wave is counting down render this function useless
 			return;
 			//If the user hits return make the counter 0
 		}else{
@@ -85,11 +78,12 @@ public class waveManager : MonoBehaviour {
 		}
 	}
 
+	//Spawn next wave
 	IEnumerator StartNextWave () {
-		//Start spawning wave
+		//The wave is now spawning
 		state = waveState.Spawning;
+		//
 		for (int i = 0; i < wave[currentWave].numberOfEnemies; i++) {
-			//Spawn one instance of an enemy if i < the number of enemies integer
 			//Spawn an enemy based on the random enemy generated
 			SpawnEnemy (wave[currentWave].enemyType[Random.Range(0,wave[currentWave].enemyType.Length)]);
 			//Make sure that an enemy only spawns after the spawnrate timer is done
@@ -112,9 +106,6 @@ public class waveManager : MonoBehaviour {
 	bool EnemiesStillAlive () {
 		bool isAlive;
 	
-
-		List<GameObject> numEnemies = new List<GameObject>();
-
 		//numEnemies = GameObject.FindGameObjectsWithTag ("Enemy");
 
 		//Create a temporary gameobject array that store any game object with the tag "enemy"
