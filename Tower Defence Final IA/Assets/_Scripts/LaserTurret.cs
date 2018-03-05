@@ -56,7 +56,7 @@ public class LaserTurret : MonoBehaviour {
 
 	void FindTarget () {
 		//Set the shortest distance to the longest distance possible
-		float shortestDistance = Mathf.Infinity;
+		float shortestDistance = 9999999999;
 		//Keep track of all enemy positions in the game.
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 

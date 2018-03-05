@@ -43,26 +43,23 @@ public class Turret : MonoBehaviour {
 		fireTimer -= Time.deltaTime;
 	}
 
-	// Update is called once per frame
-
-	//Updates the turret's "current target"
+	//Updates the “target” variable, which is of type “transform”
 	void FindTarget () {
-		//By default whent here is no enemy
-		float shortestDistance = Mathf.Infinity;
-		//Find All enemies
+		//Set the shortest distance to a really long distance in order to guarantee a shorter distance 
+		float shortestDistance = 9999999999;
+		//Store all Gameobjects with the tag “Enemy” in an array
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
-		//Get Vector3 of Closest Enemy
-		//For every enemy in targets array
+
+		//Set the turrets target
 		foreach (GameObject enemy in targets) {
 			//If distance between the turret and the target is less than the current shortestDistance
 			float distance = Vector3.Distance (transform.position, enemy.transform.position);
 			if (distance < shortestDistance) {
 				//Make the shortestDistance equal to the new shortestDistance
 				shortestDistance = distance;
-
 				//if the shortest distance is within the turret range
 				if (shortestDistance <= range) {
-					//Make the targget the position of the enemy
+					//Make the target of the turret the transform property of the enemy game object 
 					target = enemy.transform;
 				} else {
 					//Else there should be no target
@@ -72,17 +69,20 @@ public class Turret : MonoBehaviour {
 		}
 
 	}
-	//Rotate towards closest enemy if the target is within range
+	//IF the target is within range rotate the turret towards it
 	void RotateTurret () {
 		//Retrieve direction towards the enemy
 		Vector3 directionToEnemy = (target.position - transform.position).normalized;
-		//Calculate the rotation needed to look towards the target
+		/*Calculate the rotation needed to look towards the target (A Quaternion is used to prevent gimbal lock. 
+		//Though it won’t occur in this instance, it is just good practice*/
 		Quaternion targetRotation = Quaternion.LookRotation (directionToEnemy);
 		targetRotation.x = 0;
 		targetRotation.z = 0;
-		//Interpolates the amount needed to rotate the turret. This is used to smoothen the rotation and make sure the rotation is constant
+		//Interpolate the amount needed to rotate the turret. This is used to smoothout the rotation and make sure the rotation speed is constant
+		//Rotate the partThatRotates gameobject (The head of the turret) 
 		partThatRotates.transform.rotation = Quaternion.Lerp (partThatRotates.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-		//Check that angle difference < 15 before firing projectile
+		/*Check that angle difference is small enough (<= 25) before firing projectile) 
+		(so that the turret head is somewhat pointing towards the enemy before it fires*/
 		if(Quaternion.Angle(partThatRotates.transform.rotation,targetRotation) <= 25) {
 			if (fireTimer <= 0 ) {
 				Fire ();
@@ -94,7 +94,8 @@ public class Turret : MonoBehaviour {
 		
 
 	void Fire () {
-		//Change Call script of instantiated object
+		//Instantiate a Bullet prefab. 
+		//This temporary reference and cast to a game object in order to call the “setTarget” method inside the “Bullet Script” of the instantiated bullet 
 		GameObject bulletFiredGO = (GameObject) Instantiate (bullet, fireLocation.transform.position, partThatRotates.transform.rotation);
 		//Calling setTarget of BulletfiredGo script
 		Bullet bulletScript = bulletFiredGO.GetComponent<Bullet> ();

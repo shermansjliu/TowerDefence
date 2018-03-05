@@ -21,8 +21,6 @@ public class waveManager : MonoBehaviour {
 	private enum waveState {Spawning, Waiting, Coundown}
 	private  waveState state;
 
-	// Use this for initialization
-
 	void Start () {
 		currentWave = 0;
 		waveNum = 1;
@@ -108,7 +106,7 @@ public class waveManager : MonoBehaviour {
 	
 		//numEnemies = GameObject.FindGameObjectsWithTag ("Enemy");
 
-		//Create a temporary gameobject array that store any game object with the tag "enemy"
+		//Create a temporary gameobject array to store any game object with the tag "enemy"
 		GameObject[] numOfEnemies = GameObject.FindGameObjectsWithTag ("Enemy");
 			
 		//All enemies are dead
@@ -127,6 +125,7 @@ public class waveManager : MonoBehaviour {
 		waveNum++;
 		waveNumberText.text = "" +  waveNum + "/" + wave.Length;
 		state = waveState.Coundown;
+		//Increase the user's score 
 		SaveDataManager.score += wave[currentWave].scoreAmount;
 		
 	}

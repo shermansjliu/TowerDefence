@@ -8,10 +8,6 @@ public class Shop : MonoBehaviour {
 	public TurretSetup missileTurret;
 	public TurretSetup laserTurret;
 	public TurretSetup currentTurret;
-
-
-	
-	// Update is called once per frame
 	 
 	public TurretSetup Buy () {
 		if (SaveDataManager.money >= currentTurret.cost) {
