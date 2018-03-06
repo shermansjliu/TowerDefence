@@ -27,7 +27,7 @@ public class UpgradeShop : MonoBehaviour {
 		turretBox = GetComponentInParent<TurretBox> ();
 	}
 
-	// Update is called once per frame
+
 	void Update () {
 		if (turretBox.selectedTurretClone != null) {
 			upgradePriceText.text = "UPGRADE\n" + SetPrice ();

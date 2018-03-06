@@ -34,10 +34,12 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
 	void ChangeSong () {
+		//Get the Scene object that the player is currently on
 		Scene currentScene = SceneManager.GetActiveScene ();
+		//Get the name of that scene
 		string nameOfScene = currentScene.name;
 
-
+		//Change an arbitrary number based on what the name of the scene contains
 		if (nameOfScene.Contains("Start")) {
 			sceneIndex = 0;
 		}
@@ -47,9 +49,11 @@ public class MusicPlayer : MonoBehaviour {
 
 		switch (sceneIndex) {
 		case 0:
+			//Check what the current track is and stop it.
 			if (mpInstance.audioSource.clip == gameSong) {
 				mpInstance.audioSource.clip = null;
 			}
+			//Play a new song
 			if (mpInstance.audioSource.clip == null) {
 				mpInstance.audioSource.clip = menuSong;
 				mpInstance.audioSource.Play ();
