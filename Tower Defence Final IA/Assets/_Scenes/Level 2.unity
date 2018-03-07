@@ -10617,7 +10617,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2033922092}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -13481,6 +13481,7 @@ GameObject:
   - 114: {fileID: 2033922093}
   - 114: {fileID: 2033922092}
   - 114: {fileID: 2033922090}
+  - 114: {fileID: 2033922091}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13500,6 +13501,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1223354585}
+--- !u!114 &2033922091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033922089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35ec1571a11c4a0d9dc610a25d102f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2033922092
 MonoBehaviour:
   m_ObjectHideFlags: 0

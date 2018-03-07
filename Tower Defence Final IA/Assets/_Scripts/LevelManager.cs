@@ -14,8 +14,9 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadNextLevel () {
-		SceneManager.LoadScene("Level " + levelNo);
 		levelNo++;
+		SceneManager.LoadScene("Level " + levelNo);
+
 	}
 		
 	public void QuitGame () {
