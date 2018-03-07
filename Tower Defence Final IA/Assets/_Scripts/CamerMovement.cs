@@ -5,8 +5,6 @@ public class CamerMovement : MonoBehaviour {
 
 	public float moveSpeed;
 	public float scrollSpeed;
-
-
 	public float zoomOutAmount;
 	public float zoomInAmount;
 	public Vector2 edgeLimit;
@@ -38,7 +36,7 @@ public class CamerMovement : MonoBehaviour {
 		Zoom ();
 		desiredPos.y = Mathf.Clamp (desiredPos.y, 20f, 77.6f);
 
-		//Smooth out desired position
+		//Smooth out the transition from initial position to the  desired position 
 		smoothedPos = Vector3.Lerp (transform.position, desiredPos, moveSpeed * Time.deltaTime);
 
 		//Move camera position

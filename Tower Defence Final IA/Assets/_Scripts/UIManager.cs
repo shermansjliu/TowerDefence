@@ -3,6 +3,7 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour {
 
+	//Helps the turretBox Script know which turretBox Gameobject it is selecting.
 	public static UIManager _UImInstance;
 	//private int turretBoxID;
 	private int previousID;

@@ -16,8 +16,8 @@ public class UpgradeShop : MonoBehaviour {
 	[Header("Laser Upgrades")]
 	public TurretSetup[] upgradeLTurr;
 
-	bool isUISelected;
-	TurretBox turretBox;
+	private bool isUISelected;
+	private TurretBox turretBox;
 
 
 	// Use this for initialization

@@ -21,14 +21,14 @@ public class LaserTurret : MonoBehaviour {
 
 
 
-	float shortestDistance; 
+	private float shortestDistance; 
 
 	//Stores fireRate
 	[Header("Laser Settings")]
 	public float damageMultiplier;
 	private float startDamage;
 	private int previousTargetID;
-	LineRenderer laserLine;
+	private LineRenderer laserLine;
 
 
 

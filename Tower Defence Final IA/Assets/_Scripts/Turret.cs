@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour {
 	public float range;
 	//Stores fireRate
 	public float fireRate;
-	public int sellAmount;
+
 
 
 	private float fireTimer = 0;
